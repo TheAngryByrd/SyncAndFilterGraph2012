@@ -1,0 +1,140 @@
+﻿/* App Customization CSS file:
+   Contains styles that are meant to override the main theme file.
+   Feel free to go through this file and edit each field to fit your app's needs!
+   **************************************************************************************************/
+
+/* App Loading sequence */
+
+#msls-id-app-loading .ui-icon-loading {
+    background-image: url(Images/msls-loader-dark.gif) !important; /* If using light theme, change to Images/msls-loader-light.gif */
+}
+
+#msls-id-app-loading .msls-app-loading-img {
+    background-image: url(Images/user-splash-screen.png); /* Input your own custom logo here */
+}
+
+#msls-id-progress-overlay .msls-progress {
+    background: url(Images/msls-loader-dark.gif) no-repeat bottom !important;/* If using light theme, change to msls-loader-light.gif */
+}
+
+/* App theme Icons - dark theme icons
+    ***************************************************************/
+
+/* Header/dialog icons */
+
+.msls-header .msls-large-icon .ui-icon {
+    background-image: url(images/msls-white-icons-36.png)!important; /* If using light theme, change 'white' to 'black' */
+    background-color:transparent;
+}
+
+/* App Theme Typography:
+   Here you can choose what font families you want your app to use
+************************************************************************/
+
+html, body {
+    font-family: 'Segoe UI','Frutiger','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* Task Title */
+
+h1, h2 {
+    font-family: 'Segoe Light','Segoe UI Light','Frutiger','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+h3, h4 {
+    font-family: 'Segoe UI','Frutiger','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* Text elements */
+
+pre, code, tt, samp, kbd {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Base controls */
+
+.msls-control-header span {
+    font-family: 'Segoe Light','Segoe UI Light','Frutiger','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* Screen Header */
+
+.ui-bar-a {
+    font-family: 'Segoe UI','Frutiger','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.msls-header .ui-title {
+    font-family: 'Segoe Light','Segoe UI Light','Frutiger','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* Attached label text style can be customized here */
+.msls-attached-label > label {
+
+}
+
+/* Control visual states
+  *****************************************************************/
+
+/* ... disabled */
+
+.ui-body-a .ui-disabled .ui-link {
+    color: #d9d9d9 !important;
+}
+
+/* ... read only */
+
+input.msls-read-only, .msls-read-only.ui-select .ui-btn, textarea.msls-read-only {
+    background-color: transparent;
+    border-color:#595959; /* if using light theme change '#595959' to '#888888' */
+}
+
+/* ... loading */
+
+.msls-presenter.msls-loading > :not(.msls-presenter) > .msls-state-overlay,
+.msls-presenter.msls-loading > .msls-state-overlay {
+    background-image: url(Images/msls-loader-light.gif); /* If you are using the light theme change 'light' to 'dark' */
+}
+
+/* ... display error (errors loading control contents or rendering the control) */
+
+.msls-display-error-icon {
+    background-image: url(images/msls-white-icons-18.png); /* If you are using the light theme change 'white' to 'black' */
+}
+
+/* ... list loading */
+
+.msls-list-loading {
+    background-image: url(Images/msls-loader-light.gif); /* If you are using the light theme change 'light' to 'dark' */
+}
+
+/* Custom App Icon styling and Positioning
+   *********************************************************/
+
+/* Removes the header color, letting the body color show through instead */
+.ui-bar-a.msls-header, .ui-bar-a {
+    background-color: transparent;
+    background-image: none;
+    background: none;
+}
+
+/* Clear search box corrections */
+.ui-input-search {
+    background-image: none;
+}
+
+.ui-input-search .ui-input-clear {
+    margin-top:-11px;
+}
+
+.ui-input-clear.ui-shadow {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.ui-input-clear.ui-btn-up-a, 
+.ui-input-clear.ui-btn-hover-a  {
+    border:0px;
+    background:transparent;
+    background-image:none;
+}

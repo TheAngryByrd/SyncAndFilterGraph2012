@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ApplicationDataStore" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ApplicationDataStore">
+    <EntitySet Name="People" EntityType="ApplicationDataStore.Person" store:Type="Tables" Schema="dbo" Table="People" />
+    <EntitySet Name="LabsSet" EntityType="ApplicationDataStore.Labs" store:Type="Tables" Schema="dbo" Table="LabsSet" />
+    <AssociationSet Name="Labs_Person" Association="ApplicationDataStore.Labs_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Labs" EntitySet="LabsSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="SSN" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="DOB" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Labs">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="RowVersion" Type="rowversion" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="LabDate" Type="datetime" Nullable="false" />
+    <Property Name="Fingers" Type="int" />
+    <Property Name="WBC" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Limbs" Type="int" />
+    <Property Name="Labs_People" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="Labs_Person">
+    <End Role="Person" Type="ApplicationDataStore.Person" Multiplicity="1" />
+    <End Role="Labs" Type="ApplicationDataStore.Labs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Labs">
+        <PropertyRef Name="Labs_People" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

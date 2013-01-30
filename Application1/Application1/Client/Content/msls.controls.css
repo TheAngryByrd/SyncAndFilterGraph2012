@@ -1,0 +1,632 @@
+﻿/* Primitive Controls
+***************************************************************/
+.msls-control-header {
+    padding-bottom: 8px;
+}
+
+.msls-tap {
+    cursor: pointer;
+}
+
+input.ui-input-text {
+    height: 36px;
+    padding: 1px 8px;
+    margin: 0px;
+}
+
+textarea.ui-input-text {
+    padding: 8px;
+    margin: 0px;
+    height: 100% !important;
+    width: 100%;
+    resize: none;
+    overflow-y: auto;
+}
+
+.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+    margin: 0;
+    padding: 1em 0;
+}
+
+div.ui-slider {
+    top: 1px;
+}
+
+.ui-grid-solo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Attached Labels */
+
+/* This is set on a node that is root of a container whose labels need to be aligned */
+.msls-label-host {
+}
+
+.msls-attached-label {
+    white-space: nowrap;
+    text-align: left;
+    padding: 0px;
+    padding-right: 4px;
+    min-height: 1px;
+    padding-bottom:4px;
+}
+
+/* For text box and phone number editor, align the label to the middle. */
+.msls-ctl-text-box > .msls-attached-label.msls-label-align-auto:not(.msls-overflow),
+.msls-ctl-text-box > .msls-attached-label.msls-label-align-left:not(.msls-overflow),
+.msls-ctl-text-box > .msls-attached-label.msls-label-align-right:not(.msls-overflow),
+.msls-ctl-value-dropdown > .msls-attached-label.msls-label-align-auto:not(.msls-overflow),
+.msls-ctl-value-dropdown > .msls-attached-label.msls-label-align-left:not(.msls-overflow),
+.msls-ctl-value-dropdown > .msls-attached-label.msls-label-align-right:not(.msls-overflow),
+.msls-ctl-phone-number-editor > .msls-attached-label.msls-label-align-auto:not(.msls-overflow),
+.msls-ctl-phone-number-editor > .msls-attached-label.msls-label-align-left:not(.msls-overflow),
+.msls-ctl-phone-number-editor > .msls-attached-label.msls-label-align-right:not(.msls-overflow),
+.msls-ctl-details-modal-picker > .msls-attached-label.msls-label-align-auto:not(.msls-overflow),
+.msls-ctl-details-modal-picker > .msls-attached-label.msls-label-align-left:not(.msls-overflow),
+.msls-ctl-details-modal-picker > .msls-attached-label.msls-label-align-right:not(.msls-overflow) {
+    padding-top: 9px; /* original 15px */
+}
+
+/* Right aligned attached labels, when displayed on left. */
+.msls-attached-label.msls-label-align-right:not(.msls-overflow) {
+    text-align: right;
+}
+
+.msls-input-text {
+}
+
+.msls-text {
+    word-wrap: normal;
+}
+.msls-text.msls-multiline {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.msls-textBox-container {
+    margin-left: 0px;
+}
+
+.msls-text-container {
+    overflow: hidden;
+}
+
+.msls-compact-padding > div > div > .msls-text-container,
+.msls-compact-padding > div > .msls-text-container {
+    padding-left: 0px;
+}
+
+.msls-textBox-container input {
+    width: 100%;
+}
+
+/*----- Buttons -----*/
+
+.ui-btn {
+    margin: 0;
+}
+
+span .ui-btn {
+    /* Override this specific instance of span tag, so JQueryMobile buttons that use work correctly */
+    box-sizing: content-box;
+}
+
+.ui-btn-active {
+    cursor: pointer;
+}
+
+.ui-btn-inner {
+    border: none;
+    padding: 8px 12px;
+}
+
+/* radius clip workaround for cleaning up corner trapping */
+
+.ui-corner-tl,
+.ui-corner-tr,
+.ui-corner-bl,
+.ui-corner-br,
+.ui-corner-top,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-left,
+.ui-corner-all,
+.ui-btn-corner-tl,
+.ui-btn-corner-tr,
+.ui-btn-corner-bl,
+.ui-btn-corner-br,
+.ui-btn-corner-top,
+.ui-btn-corner-bottom,
+.ui-btn-corner-right,
+.ui-btn-corner-left,
+.ui-btn-corner-all {
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+}
+
+.msls-image-container {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.msls-image-border {
+    overflow: hidden;
+}
+
+/*----- Dropdowns -----*/
+
+/* A select button on IE won't drop down if width or height are set to some specific
+    values or percentages.  But it's not an issue if we set them to auto. */
+.ui-select .ui-btn select {
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    margin-left:0px;
+}
+
+.ui-select .ui-btn {
+    padding: 4px 0;
+    text-align: left;
+}
+
+
+.msls-ctl-details-modal-picker .msls-text {
+    font-weight:normal;
+    text-transform:none;
+}
+
+.ui-select .ui-btn-inner {
+    padding: 4px 8px;
+}
+
+/* Icon padding on the right side for Modal picker and select controls.
+ * 10px is the padding used for icons all other places. */
+.ui-select .ui-btn-icon-right .ui-icon {
+    right: 10px;
+}
+
+/*----- List -----*/
+
+.msls-list-loading {
+    background-repeat:no-repeat;
+    background-color:transparent;
+    background-size: 18px 18px;
+    background-position: center;
+    width: 36px;
+    height: 36px;
+    margin: auto;
+}
+
+/*----- Control visual states -----*/
+
+.msls-presenter:not(.msls-list-child), .msls-presenter-content:not(.msls-list-child) {
+    /* Needed to allow descendents to use absolute position relative to the content item presenter */
+    position: relative;
+}
+
+.msls-state-overlay {
+    position: absolute; /* Relative to parent msls-presenter-content */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    z-index: 49;
+    background: rgba(0,0,0,0); /* Keep user from being able to click through the overlay */
+}
+
+.msls-state-overlay > div {
+    display: inline-block;
+}
+
+/* ... Disabled (placed on individual HTML elements) */
+
+.ui-disabled {
+    opacity: .4;
+}
+
+.ui-disabled.msls-executing {
+    opacity: 1;
+}
+
+.ui-disabled .ui-disabled,
+.msls-read-only .ui-disabled {
+    /* Only reduce opacity for the outermost disabled/readonly item */
+    opacity: 1;
+}
+
+.ui-disabled,
+.ui-disabled a,
+.ui-disabled .msls-tap {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* ... Read-Only (placed on individual HTML elements) */
+
+.msls-read-only {
+    opacity: .8;
+}
+
+.msls-read-only .msls-read-only,
+.ui-disabled .msls-read-only {
+    /* Only reduce opacity for the outermost disabled/readonly item */
+    opacity: 1;
+}
+
+input.msls-read-only, .msls-read-only.ui-select .ui-btn, textarea.msls-read-only {
+    background: transparent;
+    border-color:#535353; /* if using light theme change '#535353' to '#888888' */
+}
+
+.msls-read-only.ui-select .ui-icon {
+    display: none;
+}
+
+.msls-readonly,
+a.msls-readonly,
+.msls-readonly .msls-tap,
+.msls-readonly.msls-tap {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* ... Loading (msls-loading placed on msls-presenter-content) */
+
+.msls-presenter-content.msls-loading > .msls-state-overlay {
+    background: url(Images/msls-loader-light.gif) no-repeat transparent;
+    background-size: 18px 18px;
+    background-position: center;
+}
+
+.msls-loading .msls-loading {
+    /* Only display for the outermost loading control */
+    background: none;
+}
+
+/* ... Display error (msls-display-error placed on msls-presenter-content) */
+
+.msls-display-error-icon {
+    background: url(images/msls-white-icons-18.png) no-repeat;
+    width: 18px;
+    height: 18px;
+    background-position: -3px 0px;
+    z-index: 1;
+    margin: 2px 3px;
+}
+
+.msls-presenter-content.msls-display-error > :not(.msls-display-error-text):not(.msls-state-overlay) {
+    /* Border around the control */
+    color: #B4000A;
+    border: 1px solid #B4000A;
+    background: #FFB59B;
+    min-width: 18px;
+    min-height: 18px;
+}
+
+.msls-display-error-text {
+    margin: 3px;
+    font-family: Tahoma;
+    color: #d8000c;
+    z-index: 49;
+    padding-left:20px;
+}
+
+/* ... Validation (msls-validation-error placed on msls-presenter-content) */
+
+.msls-presenter-content.msls-validation-error > :not(.msls-validation-error-text) {
+    border: 1px solid #d8000c;
+    padding: 1px;
+}
+
+.msls-validation-error-text {
+    margin: 3px;
+    font-family: Tahoma;
+    color: #d8000c;
+}
+
+/*----- FieldSet -----*/
+
+fieldset.ui-controlgroup-horizontal div.ui-select {
+    margin-right: 1px;
+}
+
+fieldset.ui-controlgroup-horizontal {
+    margin: 0px 0px 4px 0px;
+}
+
+/* Fixes issue in Chrome where dropdowns in fieldsets move upon selecting an option for the first time. */
+fieldset.ui-controlgroup-horizontal div.ui-select,
+fieldset.ui-controlgroup-horizontal div.ui-select div.ui-btn {
+    display:block;
+    float:left;
+}
+
+/*----- DateTimePicker -----*/
+div.msls-dateTimePicker-container fieldset.ui-controlgroup-horizontal div.ui-btn-up-a, 
+div.msls-dateTimePicker-container fieldset.ui-controlgroup-horizontal div.ui-btn-hover-a, 
+div.msls-dateTimePicker-container fieldset.ui-controlgroup-horizontal div.ui-btn-down-a {
+    min-width:0;
+}
+
+/*----- Tile List -----*/
+ul.msls-tile-list li {
+    float: left;
+    margin: 4px;
+    padding: 4px;
+}
+
+/* App Theme Typography
+    
+    Here you can control all the different aspects of your apps font size, weight, and style.
+    
+***************************************************************/
+html, body {
+    font-size: 10pt;
+}
+
+.ui-body-a,
+.ui-body-a input,
+.ui-body-a select,
+.ui-body-a textarea,
+.ui-body-a button {
+    font-family: inherit;
+    font-weight: normal;
+}
+
+.ui-body-a .ui-link {
+    font-weight: normal;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 0;
+}
+
+h1 {
+    font-size: 24pt;
+}
+/* Screen Title */
+h2 {
+    font-size: 16pt;
+}
+/* Control Headers, Overlay Headers */
+h3 {
+    font-size: 8pt;
+}
+
+h4 {
+    font-size: 8pt;
+    text-transform: uppercase;
+}
+
+/* Text elements */
+p {
+    margin: 0;
+    line-height: normal;
+}
+
+p img.left {
+    float: left;
+}
+
+p img.right {
+    float: right;
+}
+
+blockquote {
+    color: #5e5e5e;
+    line-height: 24px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+em, dfn {
+    font-style: italic;
+}
+
+dfn {
+    font-weight: 700;
+}
+
+sup, sub {
+    line-height: 0;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #5e5e5e;
+}
+
+address {
+    font-style: italic;
+    line-height: 24px;
+}
+
+del {
+    color: #5e5e5e;
+}
+
+pre {
+    white-space: pre;
+}
+
+pre, code, tt, samp, kbd {
+    font-family: "Courier New", Courier, monospace;
+    line-height: 24px;
+}
+
+.fontLight {
+    font-weight: 100;
+}
+
+small, .small {
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.large {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.indent {
+    padding: 0 0 0 16px;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+.ui-collapsible-heading {
+    /* Default margins of collapsible-heading are negative, which cause unexpected showing hScroll. set values to 0 */
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.msls-fontstyle-heading1 {
+    font-size: 3em;
+}
+
+.msls-fontstyle-heading2 {
+    font-size: 2em;
+}
+
+.msls-fontstyle-strong {
+    font-weight: bold;
+}
+
+.msls-fontstyle-emphasis {
+    font-style: italic;
+}
+
+.msls-fontstyle-warning {
+    color: red;
+    font-weight: bold;
+}
+
+.msls-fontstyle-note {
+    font-size: 0.75em;
+}
+
+.msls-p-ellipsis {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* base controls 
+   ****************************/
+.msls-control-header span {
+    font-size: 21pt; /* original font size 16pt */
+    line-height:34pt;
+}
+
+input.ui-input-text, textarea.ui-input-text {
+    font-size: 10pt;
+}
+
+
+.msls-attached-label > label {
+    font-size: 9.35pt; /*original 10pt*/
+    font-weight:bold;
+}
+
+.ui-btn-up-a,
+.ui-btn-hover-a,
+.ui-btn-down-a {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ui-btn-active {
+    font-weight: bold;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+a.ui-link-inherit {
+    text-decoration: none !important;
+}
+
+/* this removes the focus color that was being attributed to items in IE */
+.ui-focus {
+	-moz-box-shadow: none!important ;
+	-webkit-box-shadow: none!important ;
+	box-shadow: none!important ;
+}
+
+/* drop downs */
+
+.ui-select .ui-btn-up-a, .ui-select .ui-btn-hover-a {
+    font-weight: normal;
+    text-transform: none;
+}
+
+.ui-select .ui-btn-down-a {
+    font-weight: normal;
+}
+
+/* Screen Header 
+   ******************************/
+
+.ui-bar-a {
+    font-weight: normal;
+}
+
+.ui-bar-a .ui-link {
+    font-weight: bold;
+}
+
+.ui-li-desc {
+    font-size: inherit;
+    font-weight: inherit;
+    text-overflow: inherit;
+    white-space: nowrap;
+    line-height: normal;
+}
+
+.ui-bar-a,
+.ui-bar-a input,
+.ui-bar-a select,
+.ui-bar-a textarea,
+.ui-bar-a button {
+    font-family: inherit;
+}
+
+.msls-header .ui-title {
+    font-size: 24pt;
+    text-align: left;
+    letter-spacing: -1pt;
+    font-weight:normal!important;
+}
+
+/* list views */
+
+.ui-listview li {
+    font-size: 11pt;
+    font-weight: normal;
+    text-transform: none;
+}
+
+.msls-list-empty {
+    font-size: 12pt;
+}
+
+/* Accordion */
+
+.ui-collapsible a {
+    font-weight: bold;
+}
+
+.ui-collapsible-collapsed a {
+    font-weight: normal;
+}

@@ -1,0 +1,108 @@
+<script id="msls-id-main-buttons-template" type="text/msls-tmpl">
+    <!-- Binds to ShellViewModel -->
+    <div class="msls-save-home-buttons msls-buttons-row">
+        <!-- ... home button -->
+        <div class="subControl msls-home-button msls-large-icon" control="ShellButton" data-icon="msls-home"
+            data-iconpos="notext" data-role="button" data-ls-content="content:{data.homeCommand.displayName}"
+            data-ls-isenabled="isEnabled:{tap.canExecute}"
+            data-ls-tap="tap:{data.homeCommand.command}">
+        </div>
+        <!-- ... save button -->
+        <div class="subControl msls-save-button msls-large-icon" control="ShellButton" data-icon="msls-save" data-iconpos="notext"
+            data-role="button" data-ls-content="content:{data.saveCommand.displayName}"
+            data-ls-isenabled="isEnabled:{tap.canExecute}"
+            data-ls-tap="tap:{data.saveCommand.command}"
+            data-ls-isvisible="isVisible:{data.shellView.isSaveButtonVisible}">
+        </div>
+    </div>
+
+    <div class="msls-okay-cancel-buttons msls-buttons-row">
+        <!-- ... okay button -->
+        <div class="subControl msls-ok-button msls-large-icon" control="ShellButton" data-icon="msls-ok" data-iconpos="notext"
+            data-role="button" data-ls-content="content:{data.okCommand.displayName}"
+            data-ls-isenabled="isEnabled:{tap.canExecute}"
+            data-ls-tap="tap:{data.okCommand.command}">
+        </div>
+
+        <!-- ... cancel button -->
+        <div class="subControl msls-cancel-button msls-large-icon" control="ShellButton" data-icon="msls-cancel"
+            data-iconpos="notext" data-role="button" data-ls-content="content:{data.cancelCommand.displayName}"
+            data-ls-isenabled="isEnabled:{tap.canExecute}"
+            data-ls-tap="tap:{data.cancelCommand.command}">
+        </div>
+    </div>
+</script>
+<script id="Microsoft-LightSwitch-Task-Header" type="text/msls-tmpl">
+    <!-- Binds to TaskViewModel -->
+    <div>
+        <div class="titles-bar msls-group">
+            <!-- Logo or Back Button -->
+            <div class="msls-logo-back-area">
+                <!-- ... logo -->
+                <div class="msls-logo">
+                    <img src="Content/Images/user-logo.png" />
+                </div>
+
+                <!-- ... back button -->
+                <div class="subControl msls-back-button msls-large-icon" control="ShellButton" data-icon="msls-back"
+                    data-iconpos="notext" data-role="button" data-ls-content="content:{data.shell.backCommand.displayName}"
+                    data-ls-isenabled="isEnabled:{tap.canExecute}"
+                    data-ls-tap="tap:{data.shell.backCommand.command}">
+                </div>
+            </div>
+
+            <div class="msls-titles-area">
+                <!-- Task title (secondary title) -->
+                <h4 class="subControl msls-task-title" control="Text" data-ls-text="text:{data.taskTitle}"></h4>
+                <!-- ... screen title (main title) -->
+                <h1 class="subControl ui-title msls-title" control="Text" data-ls-text="text:{data.screenTitle}"></h1>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="Microsoft-LightSwitch-Dialog-Header" type="text/msls-tmpl">
+    <!-- Dialog title bar -->
+    <!-- Binds to navigationUnit -->
+    <div class="ui-bar-a ui-header msls-header msls-hauto">
+        <!-- ... title -->
+        <h1 class="subControl ui-title msls-title msls-hauto" control="Text" data-ls-text="text:{data.dialogTitle}"></h1>
+
+        <div class="msls-dialog-buttons msls-buttons-row msls-hauto">
+            <!-- ... okay button -->
+            <div class="subControl msls-ok-button msls-large-icon" control="ShellButton" data-icon="msls-ok" data-iconpos="notext"
+                data-role="button" data-ls-content="content:{data.shell.okCommand.displayName}"
+                data-ls-isenabled="isEnabled:{tap.canExecute}"
+                data-ls-tap="tap:{data.shell.okCommand.command}">
+            </div>
+
+            <!-- ... cancel button -->
+            <div class="subControl msls-cancel-button msls-large-icon" control="ShellButton" data-icon="msls-cancel"
+                data-iconpos="notext" data-role="button" data-ls-content="content:{data.shell.cancelCommand.displayName}"
+                data-ls-isenabled="isEnabled:{tap.canExecute}"
+                data-ls-tap="tap:{data.shell.cancelCommand.command}">
+            </div>
+
+            <!-- ... close button -->
+            <div class="subControl msls-close-button msls-large-icon" control="ShellButton" data-icon="msls-cancel"
+                data-iconpos="notext" data-role="button" data-ls-content="content:{data.shell.closeCommand.displayName}"
+                data-ls-isenabled="isEnabled:{tap.canExecute}"
+                data-ls-tap="tap:{data.shell.closeCommand.command}">
+            </div>
+        </div>
+    </div>
+</script>
+<script id="Microsoft-LightSwitch-Tabs-Bar" type="text/msls-tmpl">
+    <!-- Tabs bar -->
+    <!-- Binds to task -->
+    <div class="msls-vauto">
+        <div class="subControl msls-tabs-bar" control="ScreenTabs" data-ls-task="task:{data}"
+            data-ls-activetab="activeTab:{data.shell.activeNavigationUnit.pageName}"
+            data-ls-hidetabtitles="hideTabTitles:{data.screen.properties.hideTabTitles}">
+        </div>
+    </div>
+</script>
+<script id="Microsoft-LightSwitch-SharePoint-Chrome" type="text/msls-tmpl">
+    <div>
+        <iframe src="../SharePointChrome.aspx" class="msls-sharepoint-chrome-iframe" frameborder="0" scrolling="no" ></iframe>
+    </div>
+</script>

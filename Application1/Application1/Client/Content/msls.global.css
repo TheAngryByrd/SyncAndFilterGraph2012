@@ -1,0 +1,362 @@
+﻿/* Z-Index Layers Used
+***************************************************************
+
+Base layer:
+    .msls-background-page
+
+Dialogs/Overlays:
+    #msls-id-main-buttons: 25
+    .msls-state-overlay: 49
+    #msls-id-dialog-overlay: 50
+    .msls-dialog: 100
+    .msls-msgbox-overlay: 499
+    .msls-msgbox-container: 500
+    #msls-id-progress-overlay: 400
+*/
+
+/* App Loading sequence */
+#msls-id-app-loading .ui-icon-loading {
+    width: 36px;
+    height: 36px;
+    background: transparent;
+    border-radius: 0;
+    background-image: url(Images/msls-loader-dark.gif);
+    background-size:contain!important;
+    background-repeat:no-repeat;
+}
+
+#msls-id-app-loading .msls-app-loading-img {
+    background: transparent;
+    background-image: url(Images/user-splash-screen.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    max-width: 200px;
+    max-height: 188px;
+    width: 80%;
+    height: 50%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+/* General styles
+***************************************************************/
+
+html, body {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -ms-content-zooming: none;
+}
+
+.ui-content {
+    padding: 0px;
+}
+
+.ui-btn-icon-notext .ui-btn-inner .ui-icon {
+    margin:0px;
+}
+
+/* Clearing Floats
+***************************************************************/
+
+.msls-group:after, .ui-controlgroup-horizontal:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+/*----- Page Content -----*/
+
+.ui-mobile .ui-page-active {
+    overflow: hidden !important;
+}
+
+/* Layout */
+
+/* For list items, always leave space at the right end to account for the arrow */
+ul:not(.msls-tile-list) > li:not([data-icon="false"]) > .ui-btn-inner > .ui-btn-text {
+    padding-right: 35px;
+}
+
+ul:not(.msls-tile-list) > li[data-icon="false"] > .ui-btn-inner > .ui-btn-text {
+    padding-right: 16px;
+}
+
+.msls-clear {
+    clear: both;
+}
+
+.msls-hauto {
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+
+.msls-vauto {
+    overflow: hidden;
+}
+
+.msls-columns-layout > .msls-hstretch {
+    display: block;
+    float: left;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.msls-vstretch {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+/* special case <a> tags. They don't work well with float */
+a.msls-hauto, a.msls-hstretch {
+    float: none;
+}
+
+.msls-hempty {
+    float: left;
+}
+
+.msls-halign-left {
+    float: left;
+}
+
+.msls-halign-right {
+    float: right;
+}
+
+.msls-hscroll {
+    /* Min width to account for scrollbars */
+    min-width: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.msls-vscroll {
+    min-height: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+}
+
+.msls-redraw {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* when one of overflow-x or overflow-y is set to auto, the other one is automatically
+   set to auto even if it is visible. To avoid this, only when both hscroll and vscroll
+   is specified, turn them to auto. */
+.msls-hscroll.msls-vscroll {
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+/* Override for list children to avoid ipad scrolling/memory issues. */
+.msls-hauto.msls-list-child,
+.msls-vauto.msls-list-child,
+.msls-vscroll.msls-list-child,
+.msls-hscroll.msls-vscroll.msls-list-child,
+.msls-fixed-width.msls-list-child,
+.msls-hscroll.msls-list-child {
+    overflow: hidden;
+}
+
+
+/* JQM sets the width to 100%, which will cause horizontal scroll to 
+ * appear in a list. Change it to auto, which by default expands to fill the width. */
+li > div.ui-btn-inner > div.ui-btn-text {
+    width: auto;
+}
+
+.ui-content:not(.msls-vscroll) {
+    overflow-y: hidden !important;
+}
+.ui-content:not(.msls-hscroll) {
+    overflow-x: hidden !important;
+}
+
+.msls-content {
+    margin: 0px 0px;
+}
+
+.msls-collapsed {
+    display: none !important;
+}
+
+.msls-hclip {
+    overflow-x: hidden;
+}
+
+.msls-vclip {
+    overflow-y: hidden;
+}
+
+.msls-first-row {
+    padding-top: 0px;
+    padding-bottom: 4px;
+}
+
+.msls-row {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.msls-last-row {
+    padding-top: 4px;
+    padding-bottom: 0px;
+}
+
+.msls-compact-padding > .msls-first-row {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.msls-compact-padding > .msls-row {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.msls-compact-padding > .msls-last-row {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.msls-first-row.msls-last-row {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.msls-column {
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.msls-first-column {
+    padding-right: 4px;
+}
+
+.msls-last-column {
+    padding-left: 4px;
+}
+
+.msls-compact-padding > .msls-first-column {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.msls-compact-padding > .msls-column {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.msls-compact-padding > .msls-last-column {
+    padding-left: 2px;
+}
+
+.msls-first-column.msls-last-column {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/* End Layout */
+
+/* Misc
+***************************************************************/
+
+/* ...and bring back focus */
+.ui-mobile-nosupport-boxshadow .ui-focus {
+    outline-width: 2px;
+}
+
+
+/* Icons
+***************************************************************/
+.ui-icon,
+.ui-icon-searchfield:after {
+    width: 18px;
+    height: 18px;
+}
+
+#msls-id-main-buttons .ui-icon {
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    width: 36px;
+    height: 36px;
+}
+
+.msls-header .ui-btn-up-a, .msls-header .ui-btn-hover-a, .msls-header .ui-btn-down-a {
+    background: none;
+    background-image: none;
+    border: none;
+    min-width: 0;
+}
+
+.msls-header .ui-btn-icon-notext {
+    width: 36px;
+    height: 36px;
+}
+
+.msls-header .ui-btn-icon-notext .ui-btn-inner {
+    padding: 0;
+}
+
+/* 18x18 icons */
+.ui-icon-edit {
+    background-position:-69px 0px;
+}
+
+.ui-icon-save {
+    background-position:-100px 0px;
+}
+
+.ui-icon-search-cancel {
+    background-position:-133px 0px;
+}
+
+/* 36x36 icons */
+
+.msls-header .msls-large-icon .ui-icon-msls-back {
+    background-position: -293px 0px;
+}
+
+.msls-header .msls-large-icon .ui-icon-msls-ok {
+    background-position: -222px 0px;
+}
+
+.msls-header .msls-large-icon .ui-icon-msls-cancel {
+    background-position: -149px 0px;
+}
+
+.msls-header .msls-large-icon .ui-icon-msls-home  {
+    background-position: -7px 2px;
+}
+
+.msls-header .msls-large-icon .ui-icon-msls-save {
+    background-position:-74px 0px;
+}
+
+/* Save icon for progress overlay */
+#msls-id-progress-overlay .msls-progress-icon.msls-progress-save-icon {
+    width: 36px;
+    height: 36px;
+    margin: auto;
+    background: none;
+    background-image: url(images/msls-white-icons-36.png);
+    background-position: -74px 50%;
+}
+
+/* Remove position relative on li elements to fix scrolling/memory issue. */
+.ui-li, ui-field-contain.ui-li {
+    position: static;
+}

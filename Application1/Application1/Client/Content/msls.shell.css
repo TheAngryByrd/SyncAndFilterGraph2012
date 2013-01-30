@@ -1,0 +1,1036 @@
+﻿/* Main Buttons
+***************************************************************/
+#msls-id-main-buttons .ui-bar-a {
+    background-color:transparent!important;
+    background-image:none!important;
+    background:none;
+}
+
+.ui-bar-a {
+    border: none!important;
+}
+
+#msls-id-main-buttons {
+    position: fixed;
+    z-index: 25; /*see msls.global.css */
+    top: 0;
+    right: 0;
+    width: auto;
+    padding-top:0px;
+}
+
+#msls-id-main-buttons .msls-save-home-buttons,
+#msls-id-main-buttons .msls-okay-cancel-buttons {
+    float: right;
+}
+
+#msls-id-main-buttons .ui-btn {
+    margin-top: 21px;
+    margin-left: 8px;
+}
+
+.msls-save-home-buttons {
+    margin-right: 11px;
+}
+
+.msls-logo-back-area .ui-btn-icon-notext {
+    margin-top:0px;
+}
+
+.msls-header .ui-btn-up-a, .msls-header .ui-btn-hover-a, .msls-header .ui-btn-down-a{
+    background-color:transparent;
+    border:none;
+    width:36px;
+    height:36px;
+    min-width:0px;
+}
+
+.msls-header .ui-btn-down-a, .msls-logo-back-area .ui-btn-down-a {
+    opacity: .8;
+}
+
+.msls-header .ui-btn-up-a, .msls-header .ui-icon {
+    width:36px;
+    height:36px;
+}
+
+.ui-btn-icon-notext .ui-btn-inner .ui-icon {
+    margin:0px;
+}
+
+
+/* Screen Header
+***************************************************************/
+
+/* box shadows */
+
+.ui-bar-a .ui-shadow,
+.ui-bar-b .ui-shadow,
+.ui-bar-c .ui-shadow,
+.ui-shadow-inset {
+    -moz-box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+.ui-li-desc {
+    display: block;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.ui-header td {
+    vertical-align: middle;
+}
+
+.ui-header .ui-title, .ui-header .ui-footer {
+    /* Override jQuery Mobile */
+    display: inline-block;
+}
+
+.msls-buttons-row > div {
+    display: inline-block;
+}
+
+.msls-header {
+    display: block;
+    box-sizing: border-box;
+    position: static; /* Override ui-header */
+    width: 100%;
+    border: 0px;
+    padding: 16px 16px 16px;
+}
+
+.msls-header .titles-bar {
+    width: 100%;
+    position: relative;
+}
+
+.msls-header .msls-title {
+    text-align: left;
+}
+
+.msls-header .msls-title p {
+    line-height: inherit;
+}
+
+.msls-header .msls-logo-back-area, .msls-header .msls-titles-area {
+    float: left;
+}
+
+.msls-header .msls-logo-back-area {
+    margin-right: 10px; 
+    text-align: right;
+}
+
+.msls-header .msls-logo {
+    position: relative;
+}
+
+.msls-header .msls-logo img {
+    max-height: 60px;
+    max-width: 150px;
+    border-collapse: separate;
+    margin-top: 3px; 
+}
+
+.msls-header .ui-title {
+    margin: 0;
+}
+
+.msls-header .msls-task-title, .msls-header .msls-tabs-bar {
+    display: block;
+}
+
+.msls-task-title .msls-text-container {
+    height: auto;
+}
+
+.ui-header .msls-grid, .ui-header .msls-row, .ui-header .msls-row-cell {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.msls-task {
+    display: block;
+}
+
+/*----- Tab Contents -----*/
+
+.msls-tab-content-container {
+    width: 100%;
+    padding:0px 16px;
+}
+
+.msls-tab-content {
+    width: 100%;
+}
+
+.msls-tab-content:not(.msls-tab-content-active) {
+    display: none;
+}
+
+/* Navigation
+***************************************************************/
+
+/*----- Screen tab headers -----*/
+
+.msls-screen-tab .ui-btn, .msls-screen-tab .ui-btn-text {
+    font-size: 11pt;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.msls-task .ui-controlgroup-horizontal {
+    margin: 8px 0 0;
+}
+
+.msls-screen-tab {
+    display: inline-block;
+    margin: 0px 20px 0 0; 
+}
+
+.msls-screen-tab:last-child {
+    margin-right:0px;
+}
+
+.msls-screen-tab .ui-btn {
+    min-height: 0;
+}
+
+.msls-screen-tab .ui-btn-inner {
+    padding: 0.5em 0px;
+}
+
+.msls-screen-tab .ui-btn {
+    border: none;
+    border-bottom: 3px solid transparent;
+    background: none;
+    margin: 0px;
+}
+
+.msls-tabs-bar {
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+/* Screen tab navigation, when selected */
+.msls-screen-tab-active a {
+    border-bottom-color: inherit !important;
+    border-radius:0px;
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+}
+
+/* Since screen tabs don't have a background, but rather sit on top of the body background,
+    inherit the body's text color for the tab color */
+.msls-screen-tab a {
+    color: inherit;
+}
+
+/* List Views
+***************************************************************/
+
+.ui-content .ui-listview {
+    margin: 0px;
+}
+
+.ui-listview li {
+    margin-bottom: 8px;
+    padding: 12px 0px 12px 16px;
+    cursor:pointer;
+}
+
+
+.ui-listview .ui-btn-up-a, .ui-listview .ui-btn-hover-a, .ui-listview .ui-btn-down-a {
+    max-width: none;
+    min-height: 16px;
+}
+
+.ui-listview .ui-btn-up-a a.ui-link-inherit, .ui-listview .ui-btn-hover-a a.ui-link-inherit {
+    padding: 0px;
+}
+
+/* Accordion
+***************************************************************/
+
+/* Heading - collapsible */
+
+.ui-collapsible-heading-toggle.ui-btn-up-a,
+.ui-collapsible-heading-toggle.ui-btn-hover-a,
+.ui-collapsible-heading-toggle.ui-btn-down-a {
+    background: none;
+    background-image: none;
+    border-bottom-width: 2px;
+    border-right: 0px solid transparent;
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-radius:0px;
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+}
+
+.ui-collapsible-heading-toggle.ui-btn-down-a {
+    border-bottom-width: 2px;
+}
+
+.ui-collapsible-heading .ui-btn-up-a, .ui-collapsible-heading .ui-btn-down-a, .ui-collapsible-heading .ui-btn-hover-a {
+    font-size: 11pt;
+    text-transform: none;
+    margin-bottom: 8px;
+    min-height: 36px;
+    color: inherit;
+    text-shadow: none;
+}
+
+.ui-collapsible-heading a .ui-btn-inner {
+    border: none;
+    text-align: left;
+    padding-left: 36px;
+    padding-bottom: 2px;
+}
+
+.ui-collapsible-heading .ui-btn-icon-left .ui-icon, .ui-collapsible-heading .ui-btn-icon-right .ui-icon {
+    margin-top: -5px;
+}
+
+.ui-collapsible-heading .ui-btn-icon-left .ui-icon {
+    left: 8px;
+}
+
+.ui-header .ui-btn-inner, .ui-footer .ui-btn-inner, .ui-mini .ui-btn-inner {
+    padding:.5em 5px .5em;
+}
+
+.ui-btn-inner {
+    border-color:transparent!important;
+}
+
+/* Dialogs / Overlays
+***************************************************************/
+
+.ui-dialog .ui-header, .ui-dialog .ui-content {
+    max-width: initial;
+}
+
+.ui-mobile .msls-dialog {
+    z-index: 100 !important;
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    padding: 0 !important;
+    background: transparent;
+}
+
+.msls-dialog-frame.ui-body-a {
+    padding: 6px 16px 16px 16px;
+}
+
+.msls-dialog-frame.ui-body-a .msls-header {
+    padding: 0px 0px 6px 0px;
+}
+
+.msls-dialog-frame .ui-title {
+    padding-bottom: 8px;
+}
+
+.msls-dialog-frame .msls-dialog-buttons {
+    float: right;
+}
+
+/* This class is placed on the last active screen when a dialog is active, so it
+    appears grayed out in the background. */
+.msls-background-page {
+    display: block !important;
+}
+
+/* Singleton, the gray panel that covers items in the background of a dialog. */
+#msls-id-dialog-overlay {
+    z-index: 50;
+}
+
+/* Error messages */
+.msls-msgbox-overlay {
+    z-index: 499;
+}
+
+.ui-overlay,
+.msls-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.msls-overlay {
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.msls-overlay-active {
+    opacity: .8;
+    background:#101010;
+}
+
+#msls-id-progress-overlay {
+    z-index: 400;
+}
+
+#msls-id-progress-overlay.msls-overlay-active {
+    -ms-transition: opacity 1000ms;
+    -moz-transition: opacity 1000ms;
+    -o-transition: opacity 1000ms;
+    -webkit-transition: opacity 1000ms;
+    transition: opacity 1000ms;
+}
+
+#msls-id-progress-overlay .msls-progress {
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 80px;
+    margin-top: 20%;
+}
+
+#msls-id-progress-overlay .msls-progress-icon {
+    width: 36px;
+    height: 36px;
+    margin: auto;
+}
+
+.msls-msgbox-container {
+    padding: 0px 16px 10px 16px;
+    z-index: 500;
+}
+
+.msls-msgbox-container .ui-btn {
+    margin-bottom: 8px;
+}
+
+.msls-message-box-header {
+    margin-bottom: 8px;
+    margin-top:8px;
+}
+
+.msls-message-box-message {
+    margin-bottom: 24px;
+}
+
+/* General support for all transitions
+***********************************************************************************
+
+Transitions in LightSwitch are written in CSS3, and are broken into three stages.
+The stages are controlled by adding classes to the HTML body:
+1)	The animation name, e.g. “msls-screen-transition”
+2)	The stage of the animation, which cycles through “msls-stage1”, “msls-stage2” and “msls-stage3”
+3)	“msls-reverse” if the transition should be reversed
+
+The classes “msls-out” and “msls-in” are added to the screen content and header elements that should be 
+    transitioned in or out.  This allows for independent animations/transitions of multiple targets 
+    during a transition.
+
+msls-stage1: This is an animation stage and occurs immediately.
+msls-stage2: During this stage, the layout engine is invoked.  Any elements that need to be laid 
+    before being shown to the user must be set to something other than display:none during this stage.
+    This stage is done when the layout engine is done.
+msls-stage3: This is an animation stage.
+
+*/
+
+/* Defaults 
+***********************************************************************************/
+
+body.msls-stage1 .msls-in, body.msls-stage2 .msls-in, body.msls-stage3 .msls-in,
+body.msls-stage1 .msls-out, body.msls-stage2 .msls-out, body.msls-stage3 .msls-out {
+    -moz-transition-property: opacity, -moz-transform;
+    -ms-transition-property: opacity, -ms-transform;
+    -o-transition-property: opacity, -o-transform;
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
+}
+
+/**********************************************************************************
+
+    Screen Transition
+    
+***********************************************************************************/
+
+/* Default transform property value
+***************************************************************/
+
+/* Set this up from the start.  Changing it during animations
+    can cause flicker on some devices. */
+
+body .ui-page {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+/* Screen Transition: Screen Contents
+***************************************************************/
+
+/* Old screen contents slide out */
+
+body.msls-screen-transition .ui-page.msls-out .msls-content {
+    /* Old contents only visible during stage 1 */
+    display: none !important;
+}
+
+body.msls-screen-transition.msls-stage1 .ui-page.msls-out .msls-content {
+    display: block !important;
+    -moz-animation-name: msls-anim-screen-transition;
+    -ms-animation-name: msls-anim-screen-transition;
+    -o-animation-name: msls-anim-screen-transition;
+    -webkit-animation-name: msls-anim-screen-transition;
+    animation-name: msls-anim-screen-transition;
+    -moz-animation-fill-mode: forwards;
+    -ms-animation-fill-mode: forwards;
+    -o-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -moz-animation-duration: 167ms;
+    -ms-animation-duration: 167ms;
+    -o-animation-duration: 167ms;
+    -webkit-animation-duration: 167ms;
+    animation-duration: 167ms;
+}
+
+body.msls-screen-transition.msls-stage1.msls-reverse .ui-page.msls-out .msls-content {
+    -moz-animation-name: msls-anim-screen-transition-reverse;
+    -ms-animation-name: msls-anim-screen-transition-reverse;
+    -o-animation-name: msls-anim-screen-transition-reverse;
+    -webkit-animation-name: msls-anim-screen-transition-reverse;
+    animation-name: msls-anim-screen-transition-reverse;
+}
+
+@-moz-keyframes msls-anim-screen-transition {
+    0% {
+        opacity: 1;
+        -moz-transform: scale(1);
+    }
+
+    20% {
+        -moz-transform: scale(.95);
+    }
+
+    90% {
+        -moz-transform: scale(.95);
+    }
+
+    100% {
+        opacity: 0;
+        -moz-transform: scale(.9) translateX(-5%);
+    }
+}
+
+@-ms-keyframes msls-anim-screen-transition {
+    0% {
+        opacity: 1;
+        -ms-transform: scale(1);
+    }
+
+    20% {
+        -ms-transform: scale(.95);
+    }
+
+    90% {
+        -ms-transform: scale(.95);
+    }
+
+    100% {
+        opacity: 0;
+        -ms-transform: scale(.9) translateX(-5%);
+    }
+}
+
+/* We don't use scale transform for Opera, because it appears to be too slow. */
+@-o-keyframes msls-anim-screen-transition {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        -o-transform: translateX(-5%);
+    }
+}
+
+@-webkit-keyframes msls-anim-screen-transition {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+
+    20% {
+        -webkit-transform: scale(.95);
+    }
+
+    90% {
+        -webkit-transform: scale(.95);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(.9) translateX(-5%);
+    }
+}
+
+@keyframes msls-anim-screen-transition {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(.95);
+    }
+
+    90% {
+        transform: scale(.95);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.9) translateX(-5%);
+    }
+}
+
+@-moz-keyframes msls-anim-screen-transition-reverse {
+    0% {
+        opacity: 1;
+        -moz-transform: scale(1);
+    }
+
+    20% {
+        -moz-transform: scale(.95);
+    }
+
+    90% {
+        -moz-transform: scale(.95);
+    }
+
+    100% {
+        opacity: 0;
+        -moz-transform: scale(.9) translateX(5%);
+    }
+}
+
+@-ms-keyframes msls-anim-screen-transition-reverse {
+    0% {
+        opacity: 1;
+        -ms-transform: scale(1);
+    }
+
+    20% {
+        -ms-transform: scale(.95);
+    }
+
+    90% {
+        -ms-transform: scale(.95);
+    }
+
+    100% {
+        opacity: 0;
+        -ms-transform: scale(.9) translateX(5%);
+    }
+}
+
+@-o-keyframes msls-anim-screen-transition-reverse {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        -o-transform: translateX(5%);
+    }
+}
+
+@-webkit-keyframes msls-anim-screen-transition-reverse {
+    0% {
+        opacity: 1;
+        -webkit-transform: scale(1);
+    }
+
+    20% {
+        -webkit-transform: scale(.95);
+    }
+
+    90% {
+        -webkit-transform: scale(.95);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(.9) translateX(5%);
+    }
+}
+
+@keyframes msls-anim-screen-transition-reverse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scale(.95);
+    }
+
+    90% {
+        transform: scale(.95);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(.9) translateX(5%);
+    }
+}
+
+/* Rest of old page (header) slides out during stages 2-3 */
+
+body.msls-screen-transition.msls-stage3 .ui-page.msls-out {
+    opacity: 0;
+    -moz-transform: translateX(-5%);
+    -ms-transform: translateX(-5%);
+    -o-transform: translateX(-5%);
+    -webkit-transform: translateX(-5%);
+    transform: translateX(-5%);
+    -moz-transition-duration: 167ms;
+    -ms-transition-duration: 167ms;
+    -o-transition-duration: 167ms;
+    -webkit-transition-duration: 167ms;
+    transition-duration: 167ms;
+}
+
+body.msls-screen-transition.msls-stage3.msls-reverse .ui-page.msls-out {
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+    -o-transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+}
+
+/* New screen header and contents slide in during stages 2-3 */
+
+body.msls-screen-transition.msls-stage1 .ui-page.msls-in {
+    display: none !important;
+}
+
+body.msls-screen-transition.msls-stage2 .ui-page.msls-in,
+body.msls-screen-transition.msls-stage3 .ui-page.msls-in {
+    display: block !important;
+    opacity: 0;
+}
+
+body.msls-screen-transition.msls-stage2 .ui-page.msls-in {
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+    -o-transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+}
+
+body.msls-screen-transition.msls-stage2.msls-reverse .ui-page.msls-in {
+    -moz-transform: translateX(-5%);
+    -ms-transform: translateX(-5%);
+    -o-transform: translateX(-5%);
+    -webkit-transform: translateX(-5%);
+    transform: translateX(-5%);
+}
+
+body.msls-screen-transition.msls-stage3 .ui-page.msls-in {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transition-duration: 167ms;
+    -ms-transition-duration: 167ms;
+    -o-transition-duration: 167ms;
+    -webkit-transition-duration: 167ms;
+    transition-duration: 167ms;
+}
+
+body.msls-screen-transition.msls-stage2 .ui-page.msls-in .msls-tabs-bar {
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+    -o-transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+}
+
+body.msls-screen-transition.msls-stage2.msls-reverse .ui-page.msls-in .msls-tabs-bar {
+    -moz-transform: translateX(-5%);
+    -ms-transform: translateX(-5%);
+    -o-transform: translateX(-5%);
+    -webkit-transform: translateX(-5%);
+    transform: translateX(-5%);
+}
+
+body.msls-screen-transition.msls-stage3 .ui-page.msls-in .msls-tabs-bar {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transition-property:-moz-transform;
+    -ms-transition-property: -ms-transform;
+    -o-transition-property: -o-transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform;
+    -moz-transition-duration: 167ms;
+    -ms-transition-duration: 167ms;
+    -o-transition-duration: 167ms;
+    -webkit-transition-duration: 167ms;
+    transition-duration: 167ms;
+}
+
+/**********************************************************************************
+
+    Tab Transition
+    
+        There is no reverse transition here
+
+***********************************************************************************/
+
+
+/* Tab Transition
+*******************************************************Z********/
+
+/* Old tab content fades out */
+
+body.msls-tab-transition .msls-tab-content.msls-out {
+    /* Old contents only visible during stage 1 */
+    display: none !important;
+}
+
+body.msls-tab-transition.msls-stage1 .msls-tab-content.msls-out {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    -moz-transition-duration: 167ms;
+    -ms-transition-duration: 167ms;
+    -o-transition-duration: 0ms;
+    -webkit-transition-duration: 167ms;
+    transition-duration: 167ms;
+    opacity: 0;
+}
+
+/* New tab content slides in */
+
+body.msls-tab-transition.msls-stage1 .msls-tab-content.msls-in {
+    /* New contents visible during stages 2-3 only */
+    display: none !important;
+}
+
+body.msls-tab-transition.msls-stage2 .msls-tab-content.msls-in,
+body.msls-tab-transition.msls-stage3 .msls-tab-content.msls-in {
+    display: block !important;
+}
+
+body.msls-tab-transition.msls-stage2 .msls-tab-content.msls-in {
+    /* Slide in from the right */
+    opacity: 0;
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+    -o-transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+}
+
+body.msls-tab-transition.msls-stage3 .msls-tab-content.msls-in {
+    opacity: 1;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -moz-transition-duration: 167ms;
+    -ms-transition-duration: 167ms;
+    -o-transition-duration: 167ms;
+    -webkit-transition-duration: 167ms;
+    transition-duration: 167ms;
+}
+
+/**********************************************************************************
+
+    Dialog Transition
+    
+***********************************************************************************/
+
+
+/* Dialog Transition
+***************************************************************/
+
+body.msls-dialog-transition .msls-dialog-frame {
+    -moz-transition-property: opacity, -moz-transform;
+    -ms-transition-property: opacity, -ms-transform;
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
+    -moz-transition-duration: 167ms;
+    -ms-transition-duration: 167ms;
+    -o-transition-duration: 0ms;
+    -webkit-transition-duration: 167ms;
+    transition-duration: 167ms;
+}
+
+body.msls-dialog-transition.msls-reverse .msls-dialog-frame {
+    -moz-transition-duration: 267ms;
+    -ms-transition-duration: 267ms;
+    -o-transition-duration: 0ms;
+    -webkit-transition-duration: 267ms;
+    transition-duration: 267ms;
+}
+
+/* Forward - msls-in is set to the dialog, msls-out to the source page.
+   Backward - msls-in is set to the source page, msls-out to the closing dialog. 
+*/
+
+body.msls-dialog-transition .msls-dialog.msls-in,
+body.msls-dialog-transition .msls-dialog.msls-out {
+    display: block !important;
+}
+
+body.msls-dialog-transition.msls-stage1 .msls-dialog.msls-in {
+    display: none !important;
+}
+
+.msls-overlay {
+    -moz-transition: opacity 100ms;
+    -ms-transition: opacity 100ms;
+    -o-transition: opacity 100ms;
+    -webkit-transition: opacity 100ms;
+    transition: opacity 100ms;
+}
+
+body.msls-dialog-transition.msls-reverse .msls-overlay {
+    -moz-transition-delay: 167ms;
+    -ms-transition-delay: 167ms;
+    -o-transition-delay: 167ms;
+    -webkit-transition-delay: 167ms;
+    transition-delay: 167ms;
+}
+
+/* Dialog opens (forward) */
+
+body.msls-dialog-transition.msls-stage2 .msls-in .msls-dialog-frame {
+    -moz-transform: scale(.9);
+    -ms-transform: scale(.9);
+    -o-transform: initial;
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+    opacity: 0;
+}
+
+body.msls-dialog-transition.msls-stage3 .msls-in .msls-dialog-frame {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: initial;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Dialog closes (reverse) */
+
+body.msls-dialog-transition.msls-stage2.msls-reverse msls-out .msls-dialog-frame {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: initial;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+body.msls-dialog-transition.msls-stage3.msls-reverse .msls-out .msls-dialog-frame {
+    -moz-transform: scale(.9);
+    -ms-transform: scale(.9);
+    -o-transform: initial;
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+    opacity: 0;
+}
+
+/**********************************************************************************
+
+    Opening Transition
+
+    Forward Only, no msls-out
+    
+***********************************************************************************/
+
+/* Opening Transition
+***************************************************************/
+
+body.msls-opening-transition .msls-in {
+    -moz-transition-duration: 167ms;
+    -ms-transition-duration: 167ms;
+    -o-transition-duration: 167ms;
+    -webkit-transition-duration: 0ms;
+    transition-duration: 167ms;
+}
+
+body.msls-opening-transition .ui-page.msls-in,
+body.msls-opening-transition .msls-task.msls-in {
+    display: block !important;
+}
+
+body.msls-opening-transition.msls-stage1 .ui-page.msls-in,
+body.msls-opening-transition.msls-stage1 .msls-task.msls-in {
+    display: none !important;
+}
+
+body.msls-opening-transition.msls-stage2 .ui-page.msls-in {
+    -moz-transform: scale(.9);
+    -ms-transform: scale(.9);
+    -o-transform: initial;
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+    opacity: 0;
+}
+
+body.msls-opening-transition.msls-stage3 .ui-page.msls-in {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: initial;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+
+body.msls-opening-transition.msls-stage2 .msls-task.msls-in {
+    -moz-transform: translateX(5%);
+    -ms-transform: translateX(5%);
+    -o-transform: translateX(5%);
+    -webkit-transform: translateX(5%);
+    transform: translateX(5%);
+}
+
+body.msls-opening-transition.msls-stage3 .msls-taskpage.msls-in {
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+/* SharePoint Chrome
+***************************************************************/
+
+.msls-sharepoint-chrome {
+    display: block;
+}
+
+.msls-sharepoint-chrome-iframe {
+    height: 42px;
+    width: 100%;    
+}
+
+body.msls-sharepoint-enabled #msls-id-main-buttons .ui-btn {
+    margin-top: 46px;
+}

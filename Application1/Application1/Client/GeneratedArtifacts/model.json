@@ -1,0 +1,4337 @@
+﻿
+{
+  "modules":
+  [
+    {
+      "homeScreen": null,
+      "id": "!module",
+      "name": "LightSwitchApplication.Application1",
+      "logo": "/Content/Images/logo.png",
+      "targetPlatform": "MobileWeb",
+      "version": "1.0.0.0",
+      "shell": { "__id": ":HTMLShell" },
+      "theme": { "__id": ":HTMLTheme" },
+      ":@ModuleNamespace": { "namespace": "LightSwitchApplication" },
+      "globalItems":
+      [
+        {
+          "id": "DataWorkspace",
+          "name": "DataWorkspace",
+          "members":
+          [
+            {
+              "id": "DataWorkspace/Members[ApplicationData]",
+              "name": "ApplicationData",
+              "entityContainer": { "__id": "ApplicationData" }
+            }
+          ]
+        },
+        {
+          "id": "ApplicationData",
+          "name": "ApplicationData",
+          "isIntrinsic": true,
+          "associationSets":
+          [
+            {
+              "id": "ApplicationData/Members[Labs_People]",
+              "name": "Labs_People",
+              "association": { "__id": "Labs_Person" },
+              "ends":
+              [
+                {
+                  "id": "ApplicationData/Members[Labs_People]/Members[Labs]",
+                  "name": "Labs",
+                  "entitySet": { "__id": "ApplicationData/Members[LabsSet]" }
+                },
+                {
+                  "id": "ApplicationData/Members[Labs_People]/Members[Person]",
+                  "name": "Person",
+                  "entitySet": { "__id": "ApplicationData/Members[People]" }
+                }
+              ]
+            }
+          ],
+          "entitySets":
+          [
+            {
+              "id": "ApplicationData/Members[People]",
+              "name": "People",
+              "canDelete": true,
+              "canInsert": true,
+              "canUpdate": true,
+              "elementType": { "__id": "Person" },
+              "entityType": { "__id": "Person" }
+            },
+            {
+              "id": "ApplicationData/Members[LabsSet]",
+              "name": "LabsSet",
+              "canDelete": true,
+              "canInsert": true,
+              "canUpdate": true,
+              "elementType": { "__id": "Labs" },
+              "entityType": { "__id": "Labs" }
+            }
+          ],
+          "queryOperations":
+          [
+            {
+              "id": "ApplicationData/Members[People_Single]",
+              "name": "People_Single",
+              "elementType": { "__id": "Person" },
+              "query": { "__id": "ApplicationData/Members[People_Single]" },
+              "returnType": { "__id": "Person" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[People]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[People_Single]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[People_SingleOrDefault]",
+              "name": "People_SingleOrDefault",
+              "elementType": { "__id": "Person" },
+              "query": { "__id": "ApplicationData/Members[People_SingleOrDefault]" },
+              "returnType": { "__id": "Person" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[People]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[People_SingleOrDefault]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[LabsSet_Single]",
+              "name": "LabsSet_Single",
+              "elementType": { "__id": "Labs" },
+              "query": { "__id": "ApplicationData/Members[LabsSet_Single]" },
+              "returnType": { "__id": "Labs" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[LabsSet]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[LabsSet_Single]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            },
+            {
+              "id": "ApplicationData/Members[LabsSet_SingleOrDefault]",
+              "name": "LabsSet_SingleOrDefault",
+              "elementType": { "__id": "Labs" },
+              "query": { "__id": "ApplicationData/Members[LabsSet_SingleOrDefault]" },
+              "returnType": { "__id": "Labs" },
+              "source":
+              {
+                "member": { "__id": "ApplicationData/Members[LabsSet]" }
+              },
+              "parameters":
+              [
+                {
+                  "id": "ApplicationData/Members[LabsSet_SingleOrDefault]/Parameters[Id]",
+                  "name": "Id",
+                  "parameterType": { "__id": ":Int32?" }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "__isEntityType": 1,
+          "id": "Person",
+          "name": "Person",
+          "methods":
+          [
+            {
+              "id": "Person/Methods[deleteEntity]",
+              "name": "deleteEntity"
+            }
+          ],
+          "properties":
+          [
+            {
+              "__isKeyProperty": 1,
+              "id": "Person/Properties[Id]",
+              "name": "Id",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Person/Properties[RowVersion]",
+              "name": "RowVersion",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":RowVersion" },
+              ":@UseForConcurrency": { },
+              ":@Hidden": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Person/Properties[Name]",
+              "name": "Name",
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Person/Properties[SSN]",
+              "name": "SSN",
+              "propertyType": { "__id": ":String" },
+              ":@Required": { },
+              ":@MaxLength":
+              {
+                "value": 255
+              }
+            },
+            {
+              "id": "Person/Properties[DOB]",
+              "name": "DOB",
+              "propertyType": { "__id": ":Date?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Person/Properties[LabsCollection]",
+              "name": "LabsCollection",
+              "association": { "__id": "Labs_Person" },
+              "elementType": { "__id": "Labs" },
+              "fromEnd": { "__id": "Labs_Person/Ends[Person]" },
+              "propertyType": { "__id": "Labs*" },
+              "toEnd": { "__id": "Labs_Person/Ends[Labs]" }
+            }
+          ]
+        },
+        {
+          "id": "LightSwitchServiceApplicationGroup",
+          "name": "LightSwitchServiceApplicationGroup"
+        },
+        {
+          "__isEntityType": 1,
+          "id": "Labs",
+          "name": "Labs",
+          "methods":
+          [
+            {
+              "id": "Labs/Methods[deleteEntity]",
+              "name": "deleteEntity"
+            }
+          ],
+          "properties":
+          [
+            {
+              "__isKeyProperty": 1,
+              "id": "Labs/Properties[Id]",
+              "name": "Id",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":Int32" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Labs/Properties[RowVersion]",
+              "name": "RowVersion",
+              "isReadOnly": true,
+              "propertyType": { "__id": ":RowVersion" },
+              ":@UseForConcurrency": { },
+              ":@Hidden": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Labs/Properties[LabDate]",
+              "name": "LabDate",
+              "propertyType": { "__id": ":Date" },
+              ":@Required": { },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Labs/Properties[Fingers]",
+              "name": "Fingers",
+              "propertyType": { "__id": ":Int32?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Labs/Properties[WBC]",
+              "name": "WBC",
+              "propertyType": { "__id": ":Decimal?" },
+              ":@NotSearchable": { },
+              ":@DecimalConstraint":
+              {
+                "precision": 18,
+                "scale": 2
+              }
+            },
+            {
+              "id": "Labs/Properties[Limbs]",
+              "name": "Limbs",
+              "propertyType": { "__id": ":Int32?" },
+              ":@NotSearchable": { }
+            },
+            {
+              "id": "Labs/Properties[Person]",
+              "name": "Person",
+              "association": { "__id": "Labs_Person" },
+              "elementType": { "__id": "Person" },
+              "fromEnd": { "__id": "Labs_Person/Ends[Labs]" },
+              "propertyType": { "__id": "Person" },
+              "toEnd": { "__id": "Labs_Person/Ends[Person]" }
+            }
+          ]
+        },
+        {
+          "id": "Labs_Person",
+          "name": "Labs_Person",
+          "ends":
+          [
+            {
+              "id": "Labs_Person/Ends[Labs]",
+              "name": "Labs",
+              "multiplicity": "Many",
+              "entityType": { "__id": "Labs" }
+            },
+            {
+              "id": "Labs_Person/Ends[Person]",
+              "name": "Person",
+              "multiplicity": "One",
+              "entityType": { "__id": "Person" },
+              ":@DeleteRule": { "action": "Restrict" }
+            }
+          ]
+        },
+        {
+          "id": "Labs*",
+          "name": "Labs*",
+          "kind": "Enumerable",
+          "elementType": { "__id": "Labs" }
+        },
+        {
+          "id": "CollectionView$Labs",
+          "name": "CollectionView$Labs",
+          "kind": "CollectionView",
+          "elementType": { "__id": "Labs" },
+          "methods":
+          [
+            {
+              "id": "CollectionView$Labs/Methods[addNew]",
+              "name": "addNew",
+              "returnType": { "__id": "Labs" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": "CollectionView$Labs/Methods[addAndEditNew]",
+              "name": "addAndEditNew",
+              "returnType": { "__id": "Labs" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": "CollectionView$Labs/Methods[editSelected]",
+              "name": "editSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": "CollectionView$Labs/Methods[deleteSelected]",
+              "name": "deleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": "CollectionView$Labs/Methods[removeSelected]",
+              "name": "removeSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": "CollectionView$Labs/Methods[refresh]",
+              "name": "refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "CollectionView$Labs/Properties[selectedItem]",
+              "name": "selectedItem",
+              "propertyType": { "__id": "Labs" }
+            }
+          ]
+        },
+        {
+          "id": "Person*",
+          "name": "Person*",
+          "kind": "Enumerable",
+          "elementType": { "__id": "Person" }
+        },
+        {
+          "id": "CollectionView$Person",
+          "name": "CollectionView$Person",
+          "kind": "CollectionView",
+          "elementType": { "__id": "Person" },
+          "methods":
+          [
+            {
+              "id": "CollectionView$Person/Methods[addNew]",
+              "name": "addNew",
+              "returnType": { "__id": "Person" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": "CollectionView$Person/Methods[addAndEditNew]",
+              "name": "addAndEditNew",
+              "returnType": { "__id": "Person" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": "CollectionView$Person/Methods[editSelected]",
+              "name": "editSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": "CollectionView$Person/Methods[deleteSelected]",
+              "name": "deleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": "CollectionView$Person/Methods[removeSelected]",
+              "name": "removeSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": "CollectionView$Person/Methods[refresh]",
+              "name": "refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": "CollectionView$Person/Properties[selectedItem]",
+              "name": "selectedItem",
+              "propertyType": { "__id": "Person" }
+            }
+          ]
+        }
+      ],
+      "methods":
+      [
+        {
+          "id": "!module/Methods[saveChanges]",
+          "name": "saveChanges",
+          "parameters":
+          [
+            {
+              "id": "!module/Methods[saveChanges]/Parameters[navigateBackOption]",
+              "name": "navigateBackOption",
+              "parameterType": { "__id": ":Int32" }
+            }
+          ]
+        },
+        {
+          "id": "!module/Methods[discardChanges]",
+          "name": "discardChanges",
+          "parameters":
+          [
+            {
+              "id": "!module/Methods[discardChanges]/Parameters[navigateBackOption]",
+              "name": "navigateBackOption",
+              "parameterType": { "__id": ":Int32" }
+            }
+          ]
+        },
+        {
+          "id": "!module/Methods[acceptNestedChanges]",
+          "name": "acceptNestedChanges"
+        },
+        {
+          "id": "!module/Methods[cancelNestedChanges]",
+          "name": "cancelNestedChanges"
+        },
+        {
+          "id": "!module/Methods[navigateHome]",
+          "name": "navigateHome"
+        }
+      ]
+    },
+    {
+      "id": ":!module",
+      "name": "Microsoft.LightSwitch.MobileWeb",
+      "targetPlatform": "MobileWeb",
+      "globalItems":
+      [
+        {
+          "id": ":RootControl",
+          "name": "RootControl",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Unset",
+          "properties":
+          [
+            {
+              "id": ":RootControl/Properties[BrowseOnly]",
+              "name": "BrowseOnly",
+              "attachedPropertyAvailability": "Default",
+              "isAttachable": true,
+              "isInheritable": true,
+              "propertyType": { "__id": ":Boolean" },
+              "defaultValueSource":
+              {
+                "value": false
+              }
+            },
+            {
+              "id": ":RootControl/Properties[AttachedLabelPosition]",
+              "name": "AttachedLabelPosition",
+              "attachedPropertyAvailability": "Default",
+              "isAttachable": true,
+              "isInheritable": true,
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "LeftAligned"
+              }
+            },
+            {
+              "id": ":RootControl/Properties[HorizontalAlignment]",
+              "name": "HorizontalAlignment",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Left"
+              }
+            },
+            {
+              "id": ":RootControl/Properties[WidthSizingMode]",
+              "name": "WidthSizingMode",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "StretchToContainer"
+              }
+            },
+            {
+              "id": ":RootControl/Properties[HeightSizingMode]",
+              "name": "HeightSizingMode",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "FitToContent"
+              }
+            },
+            {
+              "id": ":RootControl/Properties[Width]",
+              "name": "Width",
+              "propertyType": { "__id": ":Double" },
+              "defaultValueSource":
+              {
+                "value": -1
+              }
+            },
+            {
+              "id": ":RootControl/Properties[Height]",
+              "name": "Height",
+              "propertyType": { "__id": ":Double" },
+              "defaultValueSource":
+              {
+                "value": -1
+              }
+            },
+            {
+              "id": ":RootControl/Properties[MinWidth]",
+              "name": "MinWidth",
+              "propertyType": { "__id": ":Double" },
+              "defaultValueSource":
+              {
+                "value": 0
+              }
+            },
+            {
+              "id": ":RootControl/Properties[MaxWidth]",
+              "name": "MaxWidth",
+              "propertyType": { "__id": ":Double" },
+              "defaultValueSource":
+              {
+                "value": -1
+              }
+            },
+            {
+              "id": ":RootControl/Properties[MinHeight]",
+              "name": "MinHeight",
+              "propertyType": { "__id": ":Double" },
+              "defaultValueSource":
+              {
+                "value": 0
+              }
+            },
+            {
+              "id": ":RootControl/Properties[MaxHeight]",
+              "name": "MaxHeight",
+              "propertyType": { "__id": ":Double" },
+              "defaultValueSource":
+              {
+                "value": -1
+              }
+            },
+            {
+              "id": ":RootControl/Properties[FontStyle]",
+              "name": "FontStyle",
+              "attachedPropertyAvailability": "Default",
+              "isAttachable": true,
+              "isInheritable": true,
+              "isReadOnly": true,
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Normal"
+              }
+            },
+            {
+              "id": ":RootControl/Properties[TextAlignment]",
+              "name": "TextAlignment",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Left"
+              }
+            },
+            {
+              "id": ":RootControl/Properties[Tap]",
+              "name": "Tap",
+              "isAction": true
+            }
+          ]
+        },
+        {
+          "id": ":RootValueControl",
+          "name": "RootValueControl",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Unset",
+          "baseControl": { "__id": ":RootControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "FitToContent"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":NoControl",
+          "name": "NoControl",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isViewer": true,
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" }
+            }
+          ]
+        },
+        {
+          "id": ":DateTimePicker",
+          "name": "DateTimePicker",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "properties":
+          [
+            {
+              "id": ":DateTimePicker/Properties[MinimumYear]",
+              "name": "MinimumYear",
+              "propertyType": { "__id": ":Int32" },
+              "defaultValueSource":
+              {
+                "value": 1950
+              }
+            },
+            {
+              "id": ":DateTimePicker/Properties[MaximumYear]",
+              "name": "MaximumYear",
+              "propertyType": { "__id": ":Int32" },
+              "defaultValueSource":
+              {
+                "value": 2050
+              }
+            },
+            {
+              "id": ":DateTimePicker/Properties[Clock]",
+              "name": "Clock",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "TwelveHour"
+              }
+            },
+            {
+              "id": ":DateTimePicker/Properties[MinuteIncrement]",
+              "name": "MinuteIncrement",
+              "propertyType": { "__id": ":Int32" },
+              "defaultValueSource":
+              {
+                "value": 5
+              }
+            },
+            {
+              "id": ":DateTimePicker/Properties[DatePickerEnabled]",
+              "name": "DatePickerEnabled",
+              "propertyType": { "__id": ":Boolean" },
+              "defaultValueSource":
+              {
+                "value": true
+              }
+            },
+            {
+              "id": ":DateTimePicker/Properties[TimePickerEnabled]",
+              "name": "TimePickerEnabled",
+              "propertyType": { "__id": ":Boolean" },
+              "defaultValueSource":
+              {
+                "value": true
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" }
+            }
+          ]
+        },
+        {
+          "id": ":DatePicker",
+          "name": "DatePicker",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "properties":
+          [
+            {
+              "id": ":DatePicker/Properties[MinimumYear]",
+              "name": "MinimumYear",
+              "propertyType": { "__id": ":Int32" },
+              "defaultValueSource":
+              {
+                "value": 1950
+              }
+            },
+            {
+              "id": ":DatePicker/Properties[MaximumYear]",
+              "name": "MaximumYear",
+              "propertyType": { "__id": ":Int32" },
+              "defaultValueSource":
+              {
+                "value": 2050
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" }
+            }
+          ]
+        },
+        {
+          "id": ":TextBox",
+          "name": "TextBox",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Stretch to Container",
+                  "value": "StretchToContainer"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Width]" },
+              "defaultValueSource":
+              {
+                "value": 310
+              }
+            }
+          ]
+        },
+        {
+          "id": ":EmailAddressEditor",
+          "name": "EmailAddressEditor",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Stretch to Container",
+                  "value": "StretchToContainer"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Width]" },
+              "defaultValueSource":
+              {
+                "value": 310
+              }
+            }
+          ]
+        },
+        {
+          "id": ":PhoneNumberEditor",
+          "name": "PhoneNumberEditor",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Stretch to Container",
+                  "value": "StretchToContainer"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Width]" },
+              "defaultValueSource":
+              {
+                "value": 310
+              }
+            }
+          ]
+        },
+        {
+          "id": ":EmailAddressViewer",
+          "name": "EmailAddressViewer",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isViewer": true,
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[FontStyle]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            }
+          ]
+        },
+        {
+          "id": ":WebAddressViewer",
+          "name": "WebAddressViewer",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isViewer": true,
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[FontStyle]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            }
+          ]
+        },
+        {
+          "id": ":Image",
+          "name": "Image",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isViewer": true,
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "properties":
+          [
+            {
+              "id": ":Image/Properties[Scale]",
+              "name": "Scale",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Fill"
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[Tap]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Width]" },
+              "defaultValueSource":
+              {
+                "value": 80
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Height]" },
+              "defaultValueSource":
+              {
+                "value": 80
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[MinWidth]" },
+              "defaultValueSource":
+              {
+                "value": 12
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[MinHeight]" },
+              "defaultValueSource":
+              {
+                "value": 12
+              }
+            }
+          ]
+        },
+        {
+          "id": ":TextArea",
+          "name": "TextArea",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Stretch to Container",
+                  "value": "StretchToContainer"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Width]" },
+              "defaultValueSource":
+              {
+                "value": 310
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Stretch to Container",
+                  "value": "StretchToContainer"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Height]" },
+              "defaultValueSource":
+              {
+                "value": 100
+              }
+            }
+          ]
+        },
+        {
+          "id": ":Paragraph",
+          "name": "Paragraph",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isViewer": true,
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[Tap]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[FontStyle]" }
+            }
+          ]
+        },
+        {
+          "id": ":Text",
+          "name": "Text",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isViewer": true,
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[Tap]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[FontStyle]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            }
+          ]
+        },
+        {
+          "id": ":ValueDropdown",
+          "name": "ValueDropdown",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isPicker": true,
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootValueControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Stretch to Container",
+                  "value": "StretchToContainer"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Width]" },
+              "defaultValueSource":
+              {
+                "value": 310
+              }
+            }
+          ]
+        },
+        {
+          "id": ":RootDetailsControl",
+          "name": "RootDetailsControl",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Unset",
+          "baseControl": { "__id": ":RootControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HorizontalAlignment]" },
+              "defaultValueSource":
+              {
+                "value": "Left"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":Summary",
+          "name": "Summary",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isViewer": true,
+          "supportedContentItemKind": "Details",
+          "baseControl": { "__id": ":RootDetailsControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[Tap]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[TextAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[FontStyle]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "FitToContent"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":DetailsModalPicker",
+          "name": "DetailsModalPicker",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "isPicker": true,
+          "supportedContentItemKind": "Details",
+          "baseControl": { "__id": ":RootDetailsControl" },
+          "defaultChildView": { "__id": ":Summary" },
+          "childItemPropertySources":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[BrowseOnly]" },
+              "source":
+              {
+                "value": true
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+              "source":
+              {
+                "value": "None"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[MinWidth]" },
+              "source":
+              {
+                "value": 0
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Width]" },
+              "defaultValueSource":
+              {
+                "value": 310
+              }
+            }
+          ]
+        },
+        {
+          "id": ":RootCollectionControl",
+          "name": "RootCollectionControl",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Unset",
+          "baseControl": { "__id": ":RootControl" },
+          "properties":
+          [
+            {
+              "id": ":RootCollectionControl/Properties[ItemTap]",
+              "name": "ItemTap",
+              "isAction": true
+            },
+            {
+              "id": ":RootCollectionControl/Properties[ShowHeader]",
+              "name": "ShowHeader",
+              "propertyType": { "__id": ":Boolean" },
+              "defaultValueSource":
+              {
+                "value": true
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "StretchToContainer"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[MinWidth]" },
+              "defaultValueSource":
+              {
+                "value": 310
+              }
+            }
+          ]
+        },
+        {
+          "id": ":List",
+          "name": "List",
+          "attachedLabelSupport": "DisplayedByControl",
+          "isViewer": true,
+          "supportedContentItemKind": "Collection",
+          "baseControl": { "__id": ":RootCollectionControl" },
+          "defaultChildView": { "__id": ":Summary" },
+          "childItemPropertySources":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              "source":
+              {
+                "value": "FitToContent"
+              }
+            },
+            {
+              "property": { "__id": ":RootGroup/Properties[CompactMargins]" },
+              "source":
+              {
+                "value": true
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[BrowseOnly]" },
+              "source":
+              {
+                "value": true
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+              "source":
+              {
+                "value": "None"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Fit to Content",
+                  "value": "FitToContent"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "source":
+              {
+                "value": "FitToContent"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Fit to Content",
+                  "value": "FitToContent"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "source":
+              {
+                "value": "FitToContent"
+              }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":List/Properties[ShowArrows]",
+              "name": "ShowArrows",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Auto"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":TileList",
+          "name": "TileList",
+          "attachedLabelSupport": "DisplayedByControl",
+          "isViewer": true,
+          "supportedContentItemKind": "Collection",
+          "baseControl": { "__id": ":RootCollectionControl" },
+          "defaultChildView": { "__id": ":RowsLayout" },
+          "childItemPropertySources":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[BrowseOnly]" },
+              "source":
+              {
+                "value": true
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+              "source":
+              {
+                "value": "None"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              {
+                "displayName": "Fixed Size",
+                "value": "FixedSize"
+              },
+              "source":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              {
+                "displayName": "Fixed Size",
+                "value": "FixedSize"
+              },
+              "source":
+              {
+                "value": "FixedSize"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Width]" },
+              "source":
+              {
+                "value": 150
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[Height]" },
+              "source":
+              {
+                "value": 150
+              }
+            },
+            {
+              "property": { "__id": ":RootGroup/Properties[CompactMargins]" },
+              "source":
+              {
+                "value": true
+              }
+            }
+          ]
+        },
+        {
+          "id": ":Screen",
+          "name": "Screen",
+          "attachedLabelSupport": "DisplayedByControl",
+          "supportedContentItemKind": "Screen",
+          "baseControl": { "__id": ":RootControl" },
+          "defaultChildView": { "__id": ":DialogPages" },
+          "properties":
+          [
+            {
+              "id": ":Screen/Properties[HideTabTitles]",
+              "name": "HideTabTitles",
+              "propertyType": { "__id": ":Boolean" },
+              "defaultValueSource":
+              {
+                "value": false
+              }
+            },
+            {
+              "id": ":Screen/Properties[ShowSaveButton]",
+              "name": "ShowSaveButton",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Always"
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HorizontalAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" }
+            }
+          ]
+        },
+        {
+          "id": ":Pages",
+          "name": "Pages",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Group",
+          "baseControl": { "__id": ":RootControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HorizontalAlignment]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" }
+            }
+          ]
+        },
+        {
+          "id": ":TabPages",
+          "name": "TabPages",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Group",
+          "baseControl": { "__id": ":Pages" }
+        },
+        {
+          "id": ":DialogPages",
+          "name": "DialogPages",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Group",
+          "baseControl": { "__id": ":Pages" },
+          "childItemPropertySources":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HorizontalAlignment]" },
+              "source":
+              {
+                "value": "Left"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              "source":
+              {
+                "value": "FitToContent"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              "source":
+              {
+                "value": "FitToContent"
+              }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":DialogPages/Properties[DialogType]",
+              "name": "DialogType",
+              "attachedPropertyAvailability": "ImmediateChildren",
+              "isAttachable": true,
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "OkCancel"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":RootGroup",
+          "name": "RootGroup",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Unset",
+          "baseControl": { "__id": ":RootControl" },
+          "properties":
+          [
+            {
+              "id": ":RootGroup/Properties[CompactMargins]",
+              "name": "CompactMargins",
+              "attachedPropertyAvailability": "Default",
+              "isAttachable": true,
+              "isInheritable": true,
+              "propertyType": { "__id": ":Boolean" },
+              "defaultValueSource":
+              {
+                "value": false
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[BrowseOnly]" }
+            }
+          ]
+        },
+        {
+          "id": ":AccordionLayout",
+          "name": "AccordionLayout",
+          "attachedLabelSupport": "DisplayedByControl",
+          "supportedContentItemKind": "Group",
+          "baseControl": { "__id": ":RootGroup" },
+          "childItemPropertySources":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              ":@SupportedValuesExclusive": { },
+              ":@SupportedValue":
+              [
+                {
+                  "displayName": "Fit to Content",
+                  "value": "FitToContent"
+                },
+                {
+                  "displayName": "Fixed Size",
+                  "value": "FixedSize"
+                }
+              ],
+              "source":
+              {
+                "value": "FitToContent"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":RowsLayout",
+          "name": "RowsLayout",
+          "attachedLabelSupport": "DisplayedByControl",
+          "supportedContentItemKind": "Group",
+          "baseControl": { "__id": ":RootGroup" },
+          "properties":
+          [
+            {
+              "id": ":RowsLayout/Properties[WeightedRowHeight]",
+              "name": "WeightedRowHeight",
+              "attachedPropertyAvailability": "ImmediateChildren",
+              "isAttachable": true,
+              "propertyType": { "__id": ":Double" },
+              "defaultValueSource":
+              {
+                "value": 1
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[Tap]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "StretchToContainer"
+              }
+            },
+            {
+              "property": { "__id": ":RootGroup/Properties[CompactMargins]" }
+            }
+          ]
+        },
+        {
+          "id": ":ColumnsLayout",
+          "name": "ColumnsLayout",
+          "attachedLabelSupport": "DisplayedByControl",
+          "supportedContentItemKind": "Group",
+          "baseControl": { "__id": ":RootGroup" },
+          "properties":
+          [
+            {
+              "id": ":ColumnsLayout/Properties[WeightedColumnWidth]",
+              "name": "WeightedColumnWidth",
+              "attachedPropertyAvailability": "ImmediateChildren",
+              "isAttachable": true,
+              "propertyType": { "__id": ":Double" },
+              "defaultValueSource":
+              {
+                "value": 1
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[Tap]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "StretchToContainer"
+              }
+            },
+            {
+              "property": { "__id": ":RootGroup/Properties[CompactMargins]" }
+            }
+          ]
+        },
+        {
+          "id": ":RootCommand",
+          "name": "RootCommand",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Unset",
+          "baseControl": { "__id": ":RootControl" },
+          "properties":
+          [
+            {
+              "id": ":RootCommand/Properties[HiddenIfDisabled]",
+              "name": "HiddenIfDisabled",
+              "propertyType": { "__id": ":Boolean" },
+              "defaultValueSource":
+              {
+                "value": false
+              }
+            }
+          ]
+        },
+        {
+          "id": ":Button",
+          "name": "Button",
+          "attachedLabelSupport": "DisplayedByControl",
+          "supportedContentItemKind": "Command",
+          "baseControl": { "__id": ":RootCommand" },
+          "defaultAction": { "__id": ":RootControl/Properties[Tap]" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[Tap]" }
+            },
+            {
+              "isReadOnly": true,
+              "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" },
+              "defaultValueSource":
+              {
+                "value": "None"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "FitToContent"
+              }
+            },
+            {
+              "property": { "__id": ":RootControl/Properties[MinWidth]" },
+              "defaultValueSource":
+              {
+                "value": 112
+              }
+            }
+          ]
+        },
+        {
+          "id": ":RootCustomControl",
+          "name": "RootCustomControl",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Unset",
+          "baseControl": { "__id": ":RootControl" },
+          "properties":
+          [
+            {
+              "id": ":RootCustomControl/Properties[DisabledRendering]",
+              "name": "DisabledRendering",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Automatic"
+              }
+            },
+            {
+              "id": ":RootCustomControl/Properties[ReadOnlyRendering]",
+              "name": "ReadOnlyRendering",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Automatic"
+              }
+            },
+            {
+              "id": ":RootCustomControl/Properties[ValidationRendering]",
+              "name": "ValidationRendering",
+              "propertyType": { "__id": ":String" },
+              "defaultValueSource":
+              {
+                "value": "Automatic"
+              }
+            }
+          ],
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[AttachedLabelPosition]" }
+            }
+          ]
+        },
+        {
+          "id": ":ValueCustomControl",
+          "name": "ValueCustomControl",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "Value",
+          "baseControl": { "__id": ":RootCustomControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[WidthSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "FitToContent"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":GroupCustomControl",
+          "name": "GroupCustomControl",
+          "attachedLabelSupport": "DisplayedByControl",
+          "supportedContentItemKind": "Group",
+          "baseControl": { "__id": ":RootCustomControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "StretchToContainer"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":CollectionCustomControl",
+          "name": "CollectionCustomControl",
+          "attachedLabelSupport": "DisplayedByControl",
+          "supportedContentItemKind": "Collection",
+          "baseControl": { "__id": ":RootCustomControl" },
+          "propertyOverrides":
+          [
+            {
+              "property": { "__id": ":RootControl/Properties[HeightSizingMode]" },
+              "defaultValueSource":
+              {
+                "value": "StretchToContainer"
+              }
+            }
+          ]
+        },
+        {
+          "id": ":ScreenCustomControl",
+          "name": "ScreenCustomControl",
+          "attachedLabelSupport": "DisplayedByContainer",
+          "supportedContentItemKind": "ScreenContent",
+          "baseControl": { "__id": ":RootCustomControl" }
+        },
+        {
+          "id": ":HTMLShell",
+          "name": "HTMLShell"
+        },
+        {
+          "id": ":HTMLTheme",
+          "name": "HTMLTheme"
+        }
+      ]
+    },
+    {
+      "id": ":!module",
+      "name": "Microsoft.LightSwitch",
+      "globalItems":
+      [
+        {
+          "id": ":RelativeDates",
+          "name": "RelativeDates",
+          "globalValues":
+          [
+            {
+              "id": ":RelativeDates/GlobalValues[Now]",
+              "name": "Now",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[Today]",
+              "name": "Today",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[EndOfDay]",
+              "name": "EndOfDay",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[StartOfWeek]",
+              "name": "StartOfWeek",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[EndOfWeek]",
+              "name": "EndOfWeek",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[StartOfMonth]",
+              "name": "StartOfMonth",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[EndOfMonth]",
+              "name": "EndOfMonth",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[StartOfQuarter]",
+              "name": "StartOfQuarter",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[EndOfQuarter]",
+              "name": "EndOfQuarter",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[StartOfYear]",
+              "name": "StartOfYear",
+              "returnType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":RelativeDates/GlobalValues[EndOfYear]",
+              "name": "EndOfYear",
+              "returnType": { "__id": ":DateTime" }
+            }
+          ]
+        },
+        {
+          "__isSemanticType": 1,
+          "id": ":Date",
+          "name": "Date",
+          "underlyingType": { "__id": ":DateTime" }
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Binary",
+          "name": "Binary",
+          "jSType": "Array",
+          "properties":
+          [
+            {
+              "id": ":Binary/Properties[Size]",
+              "name": "Size",
+              "propertyType": { "__id": ":Int32" }
+            }
+          ]
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Boolean",
+          "name": "Boolean",
+          "jSType": "Boolean"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Byte",
+          "name": "Byte",
+          "jSType": "Number"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":DateTime",
+          "name": "DateTime",
+          "jSType": "Date",
+          "methods":
+          [
+            {
+              "id": ":DateTime/Methods[AddDays]",
+              "name": "AddDays",
+              "returnType": { "__id": ":DateTime" },
+              "parameters":
+              [
+                {
+                  "id": ":DateTime/Methods[AddDays]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            },
+            {
+              "id": ":DateTime/Methods[AddHours]",
+              "name": "AddHours",
+              "returnType": { "__id": ":DateTime" },
+              "parameters":
+              [
+                {
+                  "id": ":DateTime/Methods[AddHours]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            },
+            {
+              "id": ":DateTime/Methods[AddMilliSeconds]",
+              "name": "AddMilliSeconds",
+              "returnType": { "__id": ":DateTime" },
+              "parameters":
+              [
+                {
+                  "id": ":DateTime/Methods[AddMilliSeconds]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            },
+            {
+              "id": ":DateTime/Methods[AddMinutes]",
+              "name": "AddMinutes",
+              "returnType": { "__id": ":DateTime" },
+              "parameters":
+              [
+                {
+                  "id": ":DateTime/Methods[AddMinutes]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            },
+            {
+              "id": ":DateTime/Methods[AddMonths]",
+              "name": "AddMonths",
+              "returnType": { "__id": ":DateTime" },
+              "parameters":
+              [
+                {
+                  "id": ":DateTime/Methods[AddMonths]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            },
+            {
+              "id": ":DateTime/Methods[AddSeconds]",
+              "name": "AddSeconds",
+              "returnType": { "__id": ":DateTime" },
+              "parameters":
+              [
+                {
+                  "id": ":DateTime/Methods[AddSeconds]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            },
+            {
+              "id": ":DateTime/Methods[AddYears]",
+              "name": "AddYears",
+              "returnType": { "__id": ":DateTime" },
+              "parameters":
+              [
+                {
+                  "id": ":DateTime/Methods[AddYears]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            },
+            {
+              "id": ":DateTime/Methods[CompareTo]",
+              "name": "CompareTo",
+              "returnType": { "__id": ":Int32" },
+              "parameters":
+              [
+                {
+                  "id": ":DateTime/Methods[CompareTo]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":DateTime" }
+                }
+              ]
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":DateTime/Properties[Date]",
+              "name": "Date",
+              "propertyType": { "__id": ":DateTime" }
+            },
+            {
+              "id": ":DateTime/Properties[Day]",
+              "name": "Day",
+              "propertyType": { "__id": ":Int32" }
+            },
+            {
+              "id": ":DateTime/Properties[DayOfYear]",
+              "name": "DayOfYear",
+              "propertyType": { "__id": ":Int32" }
+            },
+            {
+              "id": ":DateTime/Properties[Hour]",
+              "name": "Hour",
+              "propertyType": { "__id": ":Int32" }
+            },
+            {
+              "id": ":DateTime/Properties[Millisecond]",
+              "name": "Millisecond",
+              "propertyType": { "__id": ":Int32" }
+            },
+            {
+              "id": ":DateTime/Properties[Minute]",
+              "name": "Minute",
+              "propertyType": { "__id": ":Int32" }
+            },
+            {
+              "id": ":DateTime/Properties[Month]",
+              "name": "Month",
+              "propertyType": { "__id": ":Int32" }
+            },
+            {
+              "id": ":DateTime/Properties[Second]",
+              "name": "Second",
+              "propertyType": { "__id": ":Int32" }
+            },
+            {
+              "id": ":DateTime/Properties[Year]",
+              "name": "Year",
+              "propertyType": { "__id": ":Int32" }
+            }
+          ]
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Decimal",
+          "name": "Decimal",
+          "jSType": "Number"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Double",
+          "name": "Double",
+          "jSType": "Number"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Guid",
+          "name": "Guid",
+          "jSType": "String"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Int16",
+          "name": "Int16",
+          "jSType": "Number"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Int32",
+          "name": "Int32",
+          "jSType": "Number"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Int64",
+          "name": "Int64",
+          "jSType": "Number"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":RowVersion",
+          "name": "RowVersion",
+          "jSType": "Array"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":SByte",
+          "name": "SByte",
+          "jSType": "Number"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":Single",
+          "name": "Single",
+          "jSType": "Number"
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":String",
+          "name": "String",
+          "jSType": "String",
+          "methods":
+          [
+            {
+              "id": ":String/Methods[IndexOf]",
+              "name": "IndexOf",
+              "returnType": { "__id": ":Int32" },
+              "parameters":
+              [
+                {
+                  "id": ":String/Methods[IndexOf]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            },
+            {
+              "id": ":String/Methods[LastIndexOf]",
+              "name": "LastIndexOf",
+              "returnType": { "__id": ":Int32" },
+              "parameters":
+              [
+                {
+                  "id": ":String/Methods[LastIndexOf]/Parameters[Value]",
+                  "name": "Value",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            },
+            {
+              "id": ":String/Methods[Substring]",
+              "name": "Substring",
+              "returnType": { "__id": ":String" },
+              "parameters":
+              [
+                {
+                  "id": ":String/Methods[Substring]/Parameters[StartIndex]",
+                  "name": "StartIndex",
+                  "parameterType": { "__id": ":Int32" }
+                },
+                {
+                  "id": ":String/Methods[Substring]/Parameters[Length]",
+                  "name": "Length",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            },
+            {
+              "id": ":String/Methods[Concat]",
+              "name": "Concat",
+              "returnType": { "__id": ":String" },
+              "parameters":
+              [
+                {
+                  "id": ":String/Methods[Concat]/Parameters[Values]",
+                  "name": "Values",
+                  "parameterType": { "__id": ":String" }
+                }
+              ]
+            },
+            {
+              "id": ":String/Methods[Remove]",
+              "name": "Remove",
+              "returnType": { "__id": ":String" },
+              "parameters":
+              [
+                {
+                  "id": ":String/Methods[Remove]/Parameters[StartIndex]",
+                  "name": "StartIndex",
+                  "parameterType": { "__id": ":Int32" }
+                },
+                {
+                  "id": ":String/Methods[Remove]/Parameters[Count]",
+                  "name": "Count",
+                  "parameterType": { "__id": ":Int32" }
+                }
+              ]
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":String/Properties[Length]",
+              "name": "Length",
+              "propertyType": { "__id": ":Int32" }
+            }
+          ]
+        },
+        {
+          "__isPrimitiveType": 1,
+          "id": ":TimeSpan",
+          "name": "TimeSpan",
+          "jSType": "Object"
+        },
+        {
+          "id": ":Binary*",
+          "name": "Binary*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Binary" }
+        },
+        {
+          "id": ":CollectionView$Binary",
+          "name": "CollectionView$Binary",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Binary" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Binary/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Binary" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Binary/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Binary" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Binary/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Binary/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Binary/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Binary/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Binary/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Binary" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Binary?",
+          "name": "Binary?",
+          "underlyingType": { "__id": ":Binary" }
+        },
+        {
+          "id": ":Binary?*",
+          "name": "Binary?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Binary?" }
+        },
+        {
+          "id": ":CollectionView$Binary?",
+          "name": "CollectionView$Binary?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Binary?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Binary?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Binary?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Binary?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Binary?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Binary?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Binary?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Binary?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Binary?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Binary?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Binary?" }
+            }
+          ]
+        },
+        {
+          "id": ":Boolean*",
+          "name": "Boolean*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Boolean" }
+        },
+        {
+          "id": ":CollectionView$Boolean",
+          "name": "CollectionView$Boolean",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Boolean" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Boolean/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Boolean" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Boolean" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Boolean/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Boolean" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Boolean?",
+          "name": "Boolean?",
+          "underlyingType": { "__id": ":Boolean" }
+        },
+        {
+          "id": ":Boolean?*",
+          "name": "Boolean?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Boolean?" }
+        },
+        {
+          "id": ":CollectionView$Boolean?",
+          "name": "CollectionView$Boolean?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Boolean?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Boolean?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Boolean?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Boolean?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Boolean?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Boolean?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Boolean?" }
+            }
+          ]
+        },
+        {
+          "id": ":Byte*",
+          "name": "Byte*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Byte" }
+        },
+        {
+          "id": ":CollectionView$Byte",
+          "name": "CollectionView$Byte",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Byte" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Byte/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Byte" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Byte/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Byte" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Byte/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Byte/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Byte/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Byte/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Byte/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Byte" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Byte?",
+          "name": "Byte?",
+          "underlyingType": { "__id": ":Byte" }
+        },
+        {
+          "id": ":Byte?*",
+          "name": "Byte?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Byte?" }
+        },
+        {
+          "id": ":CollectionView$Byte?",
+          "name": "CollectionView$Byte?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Byte?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Byte?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Byte?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Byte?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Byte?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Byte?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Byte?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Byte?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Byte?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Byte?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Byte?" }
+            }
+          ]
+        },
+        {
+          "id": ":DateTime*",
+          "name": "DateTime*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":DateTime" }
+        },
+        {
+          "id": ":CollectionView$DateTime",
+          "name": "CollectionView$DateTime",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":DateTime" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$DateTime/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":DateTime" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":DateTime" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$DateTime/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":DateTime" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":DateTime?",
+          "name": "DateTime?",
+          "underlyingType": { "__id": ":DateTime" }
+        },
+        {
+          "id": ":DateTime?*",
+          "name": "DateTime?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":DateTime?" }
+        },
+        {
+          "id": ":CollectionView$DateTime?",
+          "name": "CollectionView$DateTime?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":DateTime?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$DateTime?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":DateTime?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":DateTime?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$DateTime?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$DateTime?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":DateTime?" }
+            }
+          ]
+        },
+        {
+          "id": ":Decimal*",
+          "name": "Decimal*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Decimal" }
+        },
+        {
+          "id": ":CollectionView$Decimal",
+          "name": "CollectionView$Decimal",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Decimal" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Decimal/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Decimal" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Decimal" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Decimal/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Decimal" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Decimal?",
+          "name": "Decimal?",
+          "underlyingType": { "__id": ":Decimal" }
+        },
+        {
+          "id": ":Decimal?*",
+          "name": "Decimal?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Decimal?" }
+        },
+        {
+          "id": ":CollectionView$Decimal?",
+          "name": "CollectionView$Decimal?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Decimal?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Decimal?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Decimal?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Decimal?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Decimal?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Decimal?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Decimal?" }
+            }
+          ]
+        },
+        {
+          "id": ":Double*",
+          "name": "Double*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Double" }
+        },
+        {
+          "id": ":CollectionView$Double",
+          "name": "CollectionView$Double",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Double" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Double/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Double" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Double/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Double" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Double/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Double/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Double/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Double/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Double/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Double" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Double?",
+          "name": "Double?",
+          "underlyingType": { "__id": ":Double" }
+        },
+        {
+          "id": ":Double?*",
+          "name": "Double?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Double?" }
+        },
+        {
+          "id": ":CollectionView$Double?",
+          "name": "CollectionView$Double?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Double?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Double?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Double?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Double?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Double?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Double?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Double?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Double?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Double?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Double?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Double?" }
+            }
+          ]
+        },
+        {
+          "id": ":Guid*",
+          "name": "Guid*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Guid" }
+        },
+        {
+          "id": ":CollectionView$Guid",
+          "name": "CollectionView$Guid",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Guid" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Guid/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Guid" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Guid/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Guid" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Guid/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Guid/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Guid/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Guid/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Guid/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Guid" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Guid?",
+          "name": "Guid?",
+          "underlyingType": { "__id": ":Guid" }
+        },
+        {
+          "id": ":Guid?*",
+          "name": "Guid?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Guid?" }
+        },
+        {
+          "id": ":CollectionView$Guid?",
+          "name": "CollectionView$Guid?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Guid?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Guid?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Guid?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Guid?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Guid?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Guid?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Guid?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Guid?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Guid?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Guid?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Guid?" }
+            }
+          ]
+        },
+        {
+          "id": ":Int16*",
+          "name": "Int16*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Int16" }
+        },
+        {
+          "id": ":CollectionView$Int16",
+          "name": "CollectionView$Int16",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Int16" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Int16/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Int16" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Int16/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Int16" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Int16/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Int16/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Int16/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Int16/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Int16/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Int16" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Int16?",
+          "name": "Int16?",
+          "underlyingType": { "__id": ":Int16" }
+        },
+        {
+          "id": ":Int16?*",
+          "name": "Int16?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Int16?" }
+        },
+        {
+          "id": ":CollectionView$Int16?",
+          "name": "CollectionView$Int16?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Int16?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Int16?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Int16?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Int16?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Int16?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Int16?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Int16?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Int16?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Int16?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Int16?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Int16?" }
+            }
+          ]
+        },
+        {
+          "id": ":Int32*",
+          "name": "Int32*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Int32" }
+        },
+        {
+          "id": ":CollectionView$Int32",
+          "name": "CollectionView$Int32",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Int32" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Int32/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Int32" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Int32/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Int32" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Int32/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Int32/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Int32/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Int32/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Int32/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Int32" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Int32?",
+          "name": "Int32?",
+          "underlyingType": { "__id": ":Int32" }
+        },
+        {
+          "id": ":Int32?*",
+          "name": "Int32?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Int32?" }
+        },
+        {
+          "id": ":CollectionView$Int32?",
+          "name": "CollectionView$Int32?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Int32?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Int32?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Int32?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Int32?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Int32?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Int32?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Int32?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Int32?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Int32?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Int32?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Int32?" }
+            }
+          ]
+        },
+        {
+          "id": ":Int64*",
+          "name": "Int64*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Int64" }
+        },
+        {
+          "id": ":CollectionView$Int64",
+          "name": "CollectionView$Int64",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Int64" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Int64/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Int64" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Int64/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Int64" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Int64/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Int64/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Int64/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Int64/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Int64/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Int64" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Int64?",
+          "name": "Int64?",
+          "underlyingType": { "__id": ":Int64" }
+        },
+        {
+          "id": ":Int64?*",
+          "name": "Int64?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Int64?" }
+        },
+        {
+          "id": ":CollectionView$Int64?",
+          "name": "CollectionView$Int64?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Int64?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Int64?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Int64?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Int64?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Int64?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Int64?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Int64?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Int64?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Int64?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Int64?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Int64?" }
+            }
+          ]
+        },
+        {
+          "id": ":RowVersion*",
+          "name": "RowVersion*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":RowVersion" }
+        },
+        {
+          "id": ":CollectionView$RowVersion",
+          "name": "CollectionView$RowVersion",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":RowVersion" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$RowVersion/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":RowVersion" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":RowVersion" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$RowVersion/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":RowVersion" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":RowVersion?",
+          "name": "RowVersion?",
+          "underlyingType": { "__id": ":RowVersion" }
+        },
+        {
+          "id": ":RowVersion?*",
+          "name": "RowVersion?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":RowVersion?" }
+        },
+        {
+          "id": ":CollectionView$RowVersion?",
+          "name": "CollectionView$RowVersion?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":RowVersion?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$RowVersion?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":RowVersion?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":RowVersion?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$RowVersion?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$RowVersion?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":RowVersion?" }
+            }
+          ]
+        },
+        {
+          "id": ":SByte*",
+          "name": "SByte*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":SByte" }
+        },
+        {
+          "id": ":CollectionView$SByte",
+          "name": "CollectionView$SByte",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":SByte" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$SByte/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":SByte" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$SByte/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":SByte" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$SByte/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$SByte/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$SByte/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$SByte/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$SByte/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":SByte" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":SByte?",
+          "name": "SByte?",
+          "underlyingType": { "__id": ":SByte" }
+        },
+        {
+          "id": ":SByte?*",
+          "name": "SByte?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":SByte?" }
+        },
+        {
+          "id": ":CollectionView$SByte?",
+          "name": "CollectionView$SByte?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":SByte?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$SByte?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":SByte?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$SByte?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":SByte?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$SByte?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$SByte?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$SByte?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$SByte?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$SByte?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":SByte?" }
+            }
+          ]
+        },
+        {
+          "id": ":Single*",
+          "name": "Single*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Single" }
+        },
+        {
+          "id": ":CollectionView$Single",
+          "name": "CollectionView$Single",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Single" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Single/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Single" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Single/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Single" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Single/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Single/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Single/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Single/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Single/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Single" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Single?",
+          "name": "Single?",
+          "underlyingType": { "__id": ":Single" }
+        },
+        {
+          "id": ":Single?*",
+          "name": "Single?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Single?" }
+        },
+        {
+          "id": ":CollectionView$Single?",
+          "name": "CollectionView$Single?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Single?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Single?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Single?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Single?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Single?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Single?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Single?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Single?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Single?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Single?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Single?" }
+            }
+          ]
+        },
+        {
+          "id": ":String*",
+          "name": "String*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":String" }
+        },
+        {
+          "id": ":CollectionView$String",
+          "name": "CollectionView$String",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":String" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$String/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":String" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$String/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":String" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$String/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$String/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$String/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$String/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$String/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":String" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":String?",
+          "name": "String?",
+          "underlyingType": { "__id": ":String" }
+        },
+        {
+          "id": ":String?*",
+          "name": "String?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":String?" }
+        },
+        {
+          "id": ":CollectionView$String?",
+          "name": "CollectionView$String?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":String?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$String?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":String?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$String?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":String?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$String?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$String?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$String?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$String?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$String?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":String?" }
+            }
+          ]
+        },
+        {
+          "id": ":TimeSpan*",
+          "name": "TimeSpan*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":TimeSpan" }
+        },
+        {
+          "id": ":CollectionView$TimeSpan",
+          "name": "CollectionView$TimeSpan",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":TimeSpan" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$TimeSpan/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":TimeSpan" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":TimeSpan" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$TimeSpan/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":TimeSpan" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":TimeSpan?",
+          "name": "TimeSpan?",
+          "underlyingType": { "__id": ":TimeSpan" }
+        },
+        {
+          "id": ":TimeSpan?*",
+          "name": "TimeSpan?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":TimeSpan?" }
+        },
+        {
+          "id": ":CollectionView$TimeSpan?",
+          "name": "CollectionView$TimeSpan?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":TimeSpan?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$TimeSpan?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":TimeSpan?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":TimeSpan?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$TimeSpan?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$TimeSpan?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":TimeSpan?" }
+            }
+          ]
+        },
+        {
+          "id": ":Date*",
+          "name": "Date*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Date" }
+        },
+        {
+          "id": ":CollectionView$Date",
+          "name": "CollectionView$Date",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Date" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Date/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Date" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Date/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Date" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Date/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Date/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Date/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Date/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Date/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Date" }
+            }
+          ]
+        },
+        {
+          "__isNullableType": 1,
+          "id": ":Date?",
+          "name": "Date?",
+          "underlyingType": { "__id": ":Date" }
+        },
+        {
+          "id": ":Date?*",
+          "name": "Date?*",
+          "kind": "Enumerable",
+          "elementType": { "__id": ":Date?" }
+        },
+        {
+          "id": ":CollectionView$Date?",
+          "name": "CollectionView$Date?",
+          "kind": "CollectionView",
+          "elementType": { "__id": ":Date?" },
+          "methods":
+          [
+            {
+              "id": ":CollectionView$Date?/Methods[AddNew]",
+              "name": "AddNew",
+              "returnType": { "__id": ":Date?" },
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_add.png" }
+            },
+            {
+              "id": ":CollectionView$Date?/Methods[AddAndEditNew]",
+              "name": "AddAndEditNew",
+              "returnType": { "__id": ":Date?" },
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_addandedit.png" }
+            },
+            {
+              "id": ":CollectionView$Date?/Methods[EditSelected]",
+              "name": "EditSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_edit.png" }
+            },
+            {
+              "id": ":CollectionView$Date?/Methods[DeleteSelected]",
+              "name": "DeleteSelected",
+              ":@DisplayMethodByDefault": { "display": true },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_delete.png" }
+            },
+            {
+              "id": ":CollectionView$Date?/Methods[RemoveSelected]",
+              "name": "RemoveSelected",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_remove.png" }
+            },
+            {
+              "id": ":CollectionView$Date?/Methods[Refresh]",
+              "name": "Refresh",
+              ":@DisplayMethodByDefault": { },
+              ":@ImageResource": { "resourceId": "Microsoft.LightSwitch.BuiltInImageResources::BuiltInResources/collection_refresh.png" }
+            }
+          ],
+          "properties":
+          [
+            {
+              "id": ":CollectionView$Date?/Properties[SelectedItem]",
+              "name": "SelectedItem",
+              "propertyType": { "__id": ":Date?" }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

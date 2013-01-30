@@ -1,0 +1,90 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Third party scripts or code, linked to or referenced from this web site, are
+    licensed to you by the third parties that own such code, not by Microsoft,
+    see ASP.NET Ajax CDN Terms of Use - http://www.asp.net/ajaxlibrary/CDN.ashx.
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Application1</title>
+
+    <link rel="stylesheet" type="text/css" href="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile.structure-1.1.1.css" />
+    <link rel="stylesheet" type="text/css" href="Content/msls.global.css" />
+    <link rel="stylesheet" type="text/css" href="Content/msls.shell.css" />
+    <link rel="stylesheet" type="text/css" href="Content/msls.controls.css" />
+
+    <!-- To use the light theme, change this to light-theme.css and modify user-customization.css
+        according to comments. You may also replace this with a custom jQuery Mobile theme. -->
+    <link rel="stylesheet" type="text/css" href="Content/dark-theme.css" />
+
+    <!-- Additional customizations for icons, fonts, and headers can be added here. -->
+    <link rel="stylesheet" type="text/css" href="Content/user-customization.css"/>
+
+    <style>
+        #msls-id-app-loading {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            visibility: visible;
+            margin: 0;
+        }
+
+            #msls-id-app-loading > * {
+                display: block;
+                margin: 0 auto;
+                padding: 0;
+                outline: 0;
+                border: 0;
+            }
+
+            #msls-id-app-loading h2, #msls-id-app-loading h4 {
+                text-align: center;
+                font: 16pt Segoe Light, Segoe UI Light, Frutiger, Helvetica Neue, Helvetica, Arial, sans-serif;
+                text-align: center;
+                text-shadow: none;
+                margin: 15% 0 0 0;
+                text-transform: uppercase;
+            }
+
+        .ui-bottom-load {
+            position: absolute;
+            bottom: 5%;
+            left: 0px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="msls-id-app-loading" class="ui-body-a msls-layout-ignore">
+        <div class="msls-app-loading-img"></div>
+        <span class="ui-icon ui-icon-loading"></span>
+        <div class="ui-bottom-load">
+            <h4>Application1</h4>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="Scripts/winjs-1.0.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-1.7.1.js"></script>
+    <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.js"></script>
+    <script type="text/javascript" src="Scripts/datajs-1.0.0.js"></script>
+    <script type="text/javascript" src="Content/Resources/msls.prerequisite.resources.js"></script>
+    <script type="text/javascript" src="Content/Resources/msls.default.prerequisite.resources.js"></script>
+    <script type="text/javascript" src="Scripts/msls-1.0.0.js"></script>
+    <script type="text/javascript" src="Scripts/Generated/data.js"></script>
+    <script type="text/javascript" src="Scripts/Generated/viewModel.js"></script>
+    <script type="text/javascript" src="Scripts/Generated/usercode.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            msls._run()
+            .then(null, function failure(error) {
+                alert(error);
+            });
+        });
+    </script>
+</body>
+</html>
